@@ -1,0 +1,23 @@
+# ErrorDocument 404 & 403 "Page not found" ---
+ErrorDocument 403 /busfair-dashboard/not-found.php
+ErrorDocument 404 /busfair-dashboard/not-found.php
+
+RewriteEngine on
+
+# SSL certificate ---
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Disable Directory Browsing ---
+Options All -Indexes
+
+# Configure index page ---
+DirectoryIndex admin-login.php
+
+# Script Pages ---
+RewriteRule ^script/admin_login_script$ bkend-calls/admin-login-checkUser.php
+
+# Content Pages ---
+RewriteRule ^login$ admin-login.php
+RewriteRule ^admin/logout$ bkend-call/admin-logout.php
+RewriteRule ^admin/dashboard$ admin-dashboard.php?pageId=dashboard
