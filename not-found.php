@@ -130,7 +130,7 @@ if ($urlI != $urlC) {
     <div class="header-main-container">
         <div class="header-site-logo">
             <a href="<?php echo $website_link; ?>/"><img src="<?php echo $website_link; ?>/assets/images/favicon.png" alt="" height="40" /></a>
-            <a href="<?php echo $website_link; ?>/" style="text-decoration: none; color: #FFFFFF; font-size: 36px; font-family: 'CustomFont';">&nbsp;<?php echo $rowChkSiteName["settingsValue"]; ?></a>
+            <a href="<?php echo $website_link; ?>/" style="text-decoration: none; color: #FFFFFF; font-size: 34px; font-family: 'CustomFont';">&nbsp;<?php echo $rowChkSiteName["settingsValue"]; ?></a>
         </div>
     </div>
 </div>

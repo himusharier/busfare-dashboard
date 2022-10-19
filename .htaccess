@@ -19,5 +19,5 @@ RewriteRule ^script/admin_login_script$ bkend-calls/admin-login-checkUser.php
 
 # Content Pages ---
 RewriteRule ^login$ admin-login.php
-RewriteRule ^admin/logout$ bkend-call/admin-logout.php
+RewriteRule ^admin/logout$ bkend-calls/admin-logout.php
 RewriteRule ^admin/dashboard$ admin-dashboard.php?pageId=dashboard

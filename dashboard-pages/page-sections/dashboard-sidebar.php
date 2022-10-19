@@ -17,6 +17,7 @@
             </div>
         </div>
         <div class="item"><a id="<?php if($_GET['pageId']=='settings') {echo 'page-active';}?>" onclick="LoaderShow()" href="admin/dashboard"><i class="fa fa-cog"></i> Settings</a></div>
+        <div class="item"><a id="<?php if($_GET['pageId']=='settings') {echo 'page-active';}?>" onclick="LoaderShow()" href="admin/dashboard"><i class="fa fa-cog"></i> Live API</a></div>
 
     </div>
 </div>
