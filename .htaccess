@@ -16,8 +16,25 @@ DirectoryIndex admin-login.php
 
 # Script Pages ---
 RewriteRule ^script/admin_login_script$ bkend-calls/admin-login-checkUser.php
+RewriteRule ^script/form-data-insert-places$ bkend-calls/places-form-data-insert.php
+RewriteRule ^script/form-data-update-places$ bkend-calls/places-form-data-update.php
 
 # Content Pages ---
 RewriteRule ^login$ admin-login.php
 RewriteRule ^admin/logout$ bkend-calls/admin-logout.php
 RewriteRule ^admin/dashboard$ admin-dashboard.php?pageId=dashboard
+
+RewriteRule ^admin/see-place-list$ admin-dashboard.php?pageId=place-list-see
+RewriteRule ^admin/add-new-place$ admin-dashboard.php?pageId=place-list-add
+RewriteRule ^admin/update-place-list$ admin-dashboard.php?pageId=place-list-update
+
+RewriteRule ^admin/see-route-list$ admin-dashboard.php?pageId=route-list-see
+RewriteRule ^admin/add-new-route$ admin-dashboard.php?pageId=route-list-add
+RewriteRule ^admin/update-route-list$ admin-dashboard.php?pageId=route-list-update
+
+RewriteRule ^admin/see-direction-list$ admin-dashboard.php?pageId=direction-list-see
+RewriteRule ^admin/add-new-direction$ admin-dashboard.php?pageId=direction-list-add
+RewriteRule ^admin/update-direction-list$ admin-dashboard.php?pageId=direction-list-update
+
+RewriteRule ^admin/settings$ admin-dashboard.php?pageId=api-settings
+RewriteRule ^admin/live-api$ admin-dashboard.php?pageId=api-live

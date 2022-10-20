@@ -14,9 +14,20 @@ html {
 
 @font-face {
     font-family: 'CustomFont';
-    src: url('../fonts/Roboto.ttf') format('truetype');
+    src: url('../fonts/roboto.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'BanglaFont';
+    src: url('../fonts/kalpurush.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.banglaFont {
+    font-family: 'BanglaFont' !important;
 }
 
 * {
@@ -643,14 +654,14 @@ textarea:focus {
 }
 .dashboard-table-container-heading {
     background: #5b86e5;
-    padding: 3px 10px;
+    padding: 5px 10px;
     color: #ffffff;
     margin: 0;
     font-family: 'CustomFont';
     font-size: 18px;
 }
 .dashboard-table-container-div{
-    padding: 0 10px;
+    padding: 0 10px 20px 10px;
 }
 
 

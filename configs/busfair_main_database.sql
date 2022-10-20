@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 18, 2022 at 09:05 PM
+-- Generation Time: Oct 20, 2022 at 09:26 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -20,6 +20,66 @@ SET time_zone = "+00:00";
 --
 -- Database: `busfair_main_database`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `all_places`
+--
+
+CREATE TABLE `all_places` (
+  `place_id` int(11) NOT NULL,
+  `placeNameEn` varchar(50) NOT NULL,
+  `placeNameBn` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `all_places`
+--
+
+INSERT INTO `all_places` (`place_id`, `placeNameEn`, `placeNameBn`) VALUES
+(3, 'Fantasy Kingdom', 'ফ্যান্টাসী কিংডম'),
+(4, 'Jatrabari', 'যাত্রাবাড়ী'),
+(5, 'Jatrabari', 'যাত্রাবাড়ী'),
+(6, 'Jatrabari', 'যাত্রাবাড়ী'),
+(7, 'Signboard', 'সাইনবোর্ড'),
+(8, 'Jatrabari', 'যাত্রাবাড়ী'),
+(9, 'Signboard', 'সাইনবোর্ড'),
+(10, 'Jatrabari', 'যাত্রাবাড়ী'),
+(11, 'Jatrabari', 'যাত্রাবাড়ী'),
+(12, 'Jatrabari', 'যাত্রাবাড়ী'),
+(13, 'Jatrabari', 'যাত্রাবাড়ী'),
+(14, 'Jatrabari', 'যাত্রাবাড়ী'),
+(15, 'Jatrabari', 'যাত্রাবাড়ী'),
+(16, 'Jatrabari', 'যাত্রাবাড়ী'),
+(17, 'Jatrabari', 'যাত্রাবাড়ী'),
+(18, 'Jatrabari', 'যাত্রাবাড়ী'),
+(19, 'Jatrabari', 'যাত্রাবাড়ী'),
+(20, 'Jatrabari', 'যাত্রাবাড়ী'),
+(21, 'Jatrabari', 'যাত্রাবাড়ী'),
+(22, 'Jatrabari', 'যাত্রাবাড়ী'),
+(23, 'Jatrabari', 'যাত্রাবাড়ী'),
+(24, 'Jatrabari', 'যাত্রাবাড়ী'),
+(25, 'Jatrabari', 'যাত্রাবাড়ী'),
+(26, 'Jatrabari', 'যাত্রাবাড়ী'),
+(27, 'Jatrabari', 'যাত্রাবাড়ী'),
+(28, 'Jatrabari', 'যাত্রাবাড়ী'),
+(29, 'Jatrabari', 'যাত্রাবাড়ী'),
+(30, 'Jatrabari', 'যাত্রাবাড়ী'),
+(31, 'Jatrabari', 'যাত্রাবাড়ী');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `all_routes`
+--
+
+CREATE TABLE `all_routes` (
+  `route_id` int(11) NOT NULL,
+  `route_no` varchar(20) NOT NULL,
+  `routeNameEn` varchar(50) NOT NULL,
+  `routeNameBn` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -70,6 +130,18 @@ INSERT INTO `user_admin` (`id`, `user_id`, `role`, `username`, `password`, `full
 --
 
 --
+-- Indexes for table `all_places`
+--
+ALTER TABLE `all_places`
+  ADD PRIMARY KEY (`place_id`);
+
+--
+-- Indexes for table `all_routes`
+--
+ALTER TABLE `all_routes`
+  ADD PRIMARY KEY (`route_id`);
+
+--
 -- Indexes for table `site_settings`
 --
 ALTER TABLE `site_settings`
@@ -84,6 +156,18 @@ ALTER TABLE `user_admin`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `all_places`
+--
+ALTER TABLE `all_places`
+  MODIFY `place_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT for table `all_routes`
+--
+ALTER TABLE `all_routes`
+  MODIFY `route_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `site_settings`

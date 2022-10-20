@@ -9,7 +9,7 @@ include "../configs/database-connection.php";
         <div class="header-section-left">
             <img onclick="toggleSidebar()" class="menu-icon" src="assets/images/menu-icon.png" alt="menu icon" height="33">
             <img src="assets/images/logo-site.jpg" alt="site logo" height="32">
-            <a href="admin/dashboard" style="text-decoration: none; color: #FFFFFF; font-size: 24px; font-family: 'CustomFont';"><?php echo $rowChkSiteName["settingsValue"]; ?></a>
+            <a href="admin/dashboard" style="text-decoration: none; color: #FFFFFF; font-size: 26px; font-family: 'CustomFont';"><?php echo $rowChkSiteName["settingsValue"]; ?></a>
         </div>
 
         <div class="header-section-right-icon">
