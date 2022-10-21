@@ -10,7 +10,7 @@
 
     <div id="response"></div>
 
-    <form id="holding-form-data" method="post" enctype="multipart/form-data">
+    <form id="route-form-data" method="post" enctype="multipart/form-data">
 
         <div class="dashboard-table-container" style="margin-bottom: 0px;">
             <p class="dashboard-table-container-heading"><i class="fa fa-road"></i> Add New Route</p>
@@ -21,24 +21,52 @@
                     <tr>
                         <td>
                             <label>Route No:</label>
-                            <input type="text" name="idNumber" id="idNumber" value="">
+                            <input type="text" name="routeNo" id="routeNo" value="">
                         </td>
                         <td>
                             <label>Route Start Place:</label>
-                            <select name="cardStatus" id="cardStatus">
-                                <option value="" selected>-- Select Place --</option>
-                                <option value="1">Diyabari (দিয়াবাড়ী)</option>
-                                <option value="2">Signboard (সাইনবোর্ড)</option>
-                                <option value="2">Postogola (পোস্তগোলা)</option>
+                            <select name="routeStartPlace" id="routeStartPlace">
+                                <option value="" selected hidden>-- Select Place --</option>
+                                <?php
+                                require ('configs/database-connection.php');
+                                $sqlp = "SELECT * FROM all_places";
+                                $resultp = mysqli_query($db, $sqlp);
+                                $countp = mysqli_num_rows($resultp);
+                                if ($countp > 0) {
+                                while ($rowp = mysqli_fetch_array($resultp, MYSQLI_ASSOC)) {
+                                ?>
+                                <option value="<?php echo $rowp['place_id']; ?>"><?php echo $rowp['placeNameEn']; ?> (<?php echo $rowp['placeNameBn']; ?>)</option>
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                } else {
+                                    echo "<option value=''><i>No Place Found!</i></option>";
+                                }
+                                ?>
                             </select>
                         </td>
                         <td>
                             <label>Route End Place:</label>
-                            <select name="cardStatus" id="cardStatus">
-                                <option value="" selected>-- Select Place --</option>
-                                <option value="1">Diyabari (দিয়াবাড়ী)</option>
-                                <option value="2">Signboard (সাইনবোর্ড)</option>
-                                <option value="2">Postogola (পোস্তগোলা)</option>
+                            <select name="routeEndPlace" id="routeEndPlace">
+                                <option value="" selected hidden>-- Select Place --</option>
+                                <?php
+                                require ('configs/database-connection.php');
+                                $sqlp = "SELECT * FROM all_places";
+                                $resultp = mysqli_query($db, $sqlp);
+                                $countp = mysqli_num_rows($resultp);
+                                if ($countp > 0) {
+                                    while ($rowp = mysqli_fetch_array($resultp, MYSQLI_ASSOC)) {
+                                        ?>
+                                        <option value="<?php echo $rowp['place_id']; ?>"><?php echo $rowp['placeNameEn']; ?> (<?php echo $rowp['placeNameBn']; ?>)</option>
+                                        <?php
+                                    }
+                                    ?>
+                                    <?php
+                                } else {
+                                    echo "<option value=''><i>No Place Found!</i></option>";
+                                }
+                                ?>
                             </select>
                         </td>
                     </tr>
@@ -48,8 +76,6 @@
             </div>
         </div>
 
-
-        <input type="hidden" id="box_count" name="box_count" value="1">
         <button type="button" name="submit-btn" id="submit-btn"><i class="fa fa-save"></i> Save Route</button>
         <img style="display: none" src="assets/images/loader.gif" width="30" />
     </form>
@@ -63,33 +89,30 @@
     $(document).ready(function () {
         $("#submit-btn").click(function () {
 
-            var idNumber = $("#idNumber").val().trim();
-            var pinNumber = $("#pinNumber").val().trim();
-            var cardStatus = $("#cardStatus").val().trim();
-            var holdingType = $("#holdingType").val().trim();
-            var personName = $("#personName").val().trim();
-            var wardNo = $("#wardNo").val().trim();
+            var routeNo = $("#routeNo").val().trim();
+            var routeStartPlace = $("#routeStartPlace").val().trim();
+            var routeEndPlace = $("#routeEndPlace").val().trim();
 
-            if(idNumber == "" || pinNumber == "" || cardStatus == "" || holdingType == "" || personName == "" || wardNo == "") {
+            if(routeNo == "" || routeStartPlace == "" || routeEndPlace == "") {
 
-                alert("ফর্মটি সঠিকভাবে পূরণ করুন!");
+                alert("Fill The Form Correctly!");
 
             } else {
 
                 $.ajax({
-                    url: 'script/holding-form-data-insert',
+                    url: 'script/form-data-insert-routes',
                     type: 'POST',
-                    data: $('#holding-form-data').serialize(),
+                    data: $('#route-form-data').serialize(),
                     beforeSend: function () {
                         $("#submit-btn").html(
                             '<img src="assets/images/loader.gif" width="30" />');
                         $('#loader').show();
                     },
                     success: function (data) {
-                        $("#submit-btn").html('<i class="fa fa-save"></i> তথ্য সংরক্ষণ করুন');
+                        $("#submit-btn").html('<i class="fa fa-save"></i> Save Route');
                         $('#response').fadeIn();
                         $('#response').html(data);
-                        $("#holding-form-data").hide();
+                        $("#route-form-data").hide();
                         $('#loader').hide();
                     }
                 });
@@ -102,12 +125,12 @@
 
 <script>
     function showForm () {
-        $('#holding-form-data').trigger("reset");
-        $('#holding-form-data').show();
+        $('#route-form-data').trigger("reset");
+        $('#route-form-data').show();
         $('#response').hide();
     }
     function reTryForm () {
-        $('#holding-form-data').show();
+        $('#route-form-data').show();
         $('#response').hide();
     }
 </script>

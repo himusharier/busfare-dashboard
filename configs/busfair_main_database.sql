@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 20, 2022 at 09:26 PM
+-- Generation Time: Oct 21, 2022 at 10:02 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -20,6 +20,31 @@ SET time_zone = "+00:00";
 --
 -- Database: `busfair_main_database`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `all_directions`
+--
+
+CREATE TABLE `all_directions` (
+  `direction_id` int(11) NOT NULL,
+  `direction_route` varchar(20) NOT NULL,
+  `direction_place` varchar(20) NOT NULL,
+  `direction_distance` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `all_directions`
+--
+
+INSERT INTO `all_directions` (`direction_id`, `direction_route`, `direction_place`, `direction_distance`) VALUES
+(3, '368', '9', '6.7'),
+(8, '368', '3', '2.1'),
+(13, '317', '8', '2.8'),
+(16, '317', '8', '4.4'),
+(17, '368', '12', '2.2'),
+(18, '317', '9', '2');
 
 -- --------------------------------------------------------
 
@@ -66,7 +91,9 @@ INSERT INTO `all_places` (`place_id`, `placeNameEn`, `placeNameBn`) VALUES
 (28, 'Jatrabari', 'যাত্রাবাড়ী'),
 (29, 'Jatrabari', 'যাত্রাবাড়ী'),
 (30, 'Jatrabari', 'যাত্রাবাড়ী'),
-(31, 'Jatrabari', 'যাত্রাবাড়ী');
+(31, 'Jatrabari', 'যাত্রাবাড়ী'),
+(34, 'Jatrabari', 'যাত্রাবাড়ী'),
+(35, 'Signboard', 'সাইনবোর্ড');
 
 -- --------------------------------------------------------
 
@@ -77,9 +104,17 @@ INSERT INTO `all_places` (`place_id`, `placeNameEn`, `placeNameBn`) VALUES
 CREATE TABLE `all_routes` (
   `route_id` int(11) NOT NULL,
   `route_no` varchar(20) NOT NULL,
-  `routeNameEn` varchar(50) NOT NULL,
-  `routeNameBn` varchar(50) NOT NULL
+  `routeStartPlace` varchar(20) NOT NULL,
+  `routeEndPlace` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `all_routes`
+--
+
+INSERT INTO `all_routes` (`route_id`, `route_no`, `routeStartPlace`, `routeEndPlace`) VALUES
+(1, '317', '4', '7'),
+(2, '368', '3', '7');
 
 -- --------------------------------------------------------
 
@@ -130,6 +165,12 @@ INSERT INTO `user_admin` (`id`, `user_id`, `role`, `username`, `password`, `full
 --
 
 --
+-- Indexes for table `all_directions`
+--
+ALTER TABLE `all_directions`
+  ADD PRIMARY KEY (`direction_id`);
+
+--
 -- Indexes for table `all_places`
 --
 ALTER TABLE `all_places`
@@ -158,16 +199,22 @@ ALTER TABLE `user_admin`
 --
 
 --
+-- AUTO_INCREMENT for table `all_directions`
+--
+ALTER TABLE `all_directions`
+  MODIFY `direction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
 -- AUTO_INCREMENT for table `all_places`
 --
 ALTER TABLE `all_places`
-  MODIFY `place_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `place_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `all_routes`
 --
 ALTER TABLE `all_routes`
-  MODIFY `route_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `route_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `site_settings`

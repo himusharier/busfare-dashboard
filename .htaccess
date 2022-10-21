@@ -16,8 +16,15 @@ DirectoryIndex admin-login.php
 
 # Script Pages ---
 RewriteRule ^script/admin_login_script$ bkend-calls/admin-login-checkUser.php
+
 RewriteRule ^script/form-data-insert-places$ bkend-calls/places-form-data-insert.php
 RewriteRule ^script/form-data-update-places$ bkend-calls/places-form-data-update.php
+
+RewriteRule ^script/form-data-insert-routes$ bkend-calls/routes-form-data-insert.php
+RewriteRule ^script/form-data-update-routes$ bkend-calls/routes-form-data-update.php
+
+RewriteRule ^script/form-data-insert-directions$ bkend-calls/directions-form-data-insert.php
+RewriteRule ^script/form-data-update-directions$ bkend-calls/directions-form-data-update.php
 
 # Content Pages ---
 RewriteRule ^login$ admin-login.php

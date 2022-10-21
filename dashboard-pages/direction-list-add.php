@@ -1,63 +1,84 @@
 
 <script>
-    document.title = 'Add New Route - <?php echo $rowChkSiteName["settingsValue"]; ?>';
+    document.title = 'Add New Directions - <?php echo $rowChkSiteName["settingsValue"]; ?>';
 </script>
 
 <div class="content-body-main-div">
 
-    <p class="page-direction"><i class="fa fa-link"></i> Admin Panel / Add New Direction /</p>
+    <p class="page-direction"><i class="fa fa-link"></i> Admin Panel / Add New Directions /</p>
 
 
     <div id="response"></div>
 
-    <form id="holding-form-data" method="post" enctype="multipart/form-data">
+    <form id="directions-form-data" method="post" enctype="multipart/form-data">
 
         <div class="dashboard-table-container" style="margin-bottom: 0px;">
-            <p class="dashboard-table-container-heading"><i class="fa fa-compass"></i> Add New Direction</p>
-            <div class="dashboard-table-container-div">
+            <p class="dashboard-table-container-heading"><i class="fa fa-compass"></i> Add New Directions</p>
+            <div class="dashboard-table-container-div" id="form-wrap">
 
                 <table>
                     <tbody>
                     <tr>
                         <td>
                             <label>Route No:</label>
-                            <select name="cardStatus" id="cardStatus">
-                                <option value="" selected>-- Select Route --</option>
-                                <option value="1">317 (Diyabari - Postogola)</option>
-                                <option value="1">368 (Signboard - Fantasy Kingdom)</option>
+                            <select name="routeNo" id="routeNo">
+                                <option value="" selected hidden>-- Select Route --</option>
+                                <?php
+                                require ('configs/database-connection.php');
+                                $sqlr = "SELECT * FROM all_routes";
+                                $resultr = mysqli_query($db, $sqlr);
+                                $countr = mysqli_num_rows($resultr);
+                                if ($countr > 0) {
+                                    function place_name_en($data)
+                                    {
+                                        include "configs/database-connection.php";
+                                        $data = "SELECT * FROM all_places WHERE place_id = {$data}";
+                                        $data = mysqli_query($db, $data);
+                                        $data = mysqli_fetch_array($data, MYSQLI_ASSOC);
+                                        $data = $data["placeNameEn"];
+                                        return $data;
+                                    }
+                                    while ($rowr = mysqli_fetch_array($resultr, MYSQLI_ASSOC)) {
+                                        ?>
+                                        <option value="<?php echo $rowr['route_no']; ?>"><?php echo $rowr['route_no']; ?> (<?php echo place_name_en($rowr['routeStartPlace']); ?> - <?php echo place_name_en($rowr['routeEndPlace']); ?>)</option>
+                                        <?php
+                                    }
+                                    ?>
+                                    <?php
+                                } else {
+                                    echo "<option value=''><i>No Route Found!</i></option>";
+                                }
+                                ?>
                             </select>
                         </td>
                         <td>
                             <label>Place Name:</label>
-                            <select name="cardStatus" id="cardStatus">
-                                <option value="" selected>-- Select Place --</option>
-                                <option value="1">Diyabari (দিয়াবাড়ী)</option>
-                                <option value="2">Signboard (সাইনবোর্ড)</option>
-                                <option value="2">Postogola (পোস্তগোলা)</option>
+                            <select name="placeName1" id="placeName1">
+                                <option value="" selected hidden>-- Select Place --</option>
+                                <?php
+                                require ('configs/database-connection.php');
+                                $sqlp = "SELECT * FROM all_places";
+                                $resultp = mysqli_query($db, $sqlp);
+                                $countp = mysqli_num_rows($resultp);
+                                if ($countp > 0) {
+                                    while ($rowp = mysqli_fetch_array($resultp, MYSQLI_ASSOC)) {
+                                        ?>
+                                        <option value="<?php echo $rowp['place_id']; ?>"><?php echo $rowp['placeNameEn']; ?> (<?php echo $rowp['placeNameBn']; ?>)</option>
+                                        <?php
+                                    }
+                                    ?>
+                                    <?php
+                                } else {
+                                    echo "<option value=''><i>No Place Found!</i></option>";
+                                }
+                                ?>
                             </select>
                         </td>
                         <td>
-                            <label>Place Distance:</label>
-                            <input type="text" name="pinNumber" id="pinNumber" value="">
+                            <label>Place Distance (KM):</label>
+                            <input type="text" name="placeDistance1" id="placeDistance1" value="">
                         </td>
                         <td><a onclick="add_more()" class="add-btn2" style="display:inline-block;margin: 0;margin-top: 20px; border-radius: 2px;"><i class="fa fa-plus"></i> Add Another Place</a></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <label>Place Name:</label>
-                            <select name="cardStatus" id="cardStatus">
-                                <option value="" selected>-- Select Place --</option>
-                                <option value="1">Diyabari (দিয়াবাড়ী)</option>
-                                <option value="2">Signboard (সাইনবোর্ড)</option>
-                                <option value="2">Postogola (পোস্তগোলা)</option>
-                            </select>
-                        </td>
-                        <td>
-                            <label>Place Distance:</label>
-                            <input type="text" name="pinNumber" id="pinNumber" value="">
-                        </td>
-                        <td><a class="delete-btn2" style="display:inline-block;margin: 0;margin-top: 20px;border-radius: 2px;"><i class="fa fa-trash"></i> Remove</a></td>
                     </tr>
                     </tbody>
                 </table>
@@ -80,33 +101,30 @@
     $(document).ready(function () {
         $("#submit-btn").click(function () {
 
-            var idNumber = $("#idNumber").val().trim();
-            var pinNumber = $("#pinNumber").val().trim();
-            var cardStatus = $("#cardStatus").val().trim();
-            var holdingType = $("#holdingType").val().trim();
-            var personName = $("#personName").val().trim();
-            var wardNo = $("#wardNo").val().trim();
+            var routeNo = $("#routeNo").val().trim();
+            var placeName1 = $("#placeName1").val().trim();
+            var placeDistance1 = $("#placeDistance1").val().trim();
 
-            if(idNumber == "" || pinNumber == "" || cardStatus == "" || holdingType == "" || personName == "" || wardNo == "") {
+            if(routeNo == "" || placeName1 == "" || placeDistance1 == "") {
 
-                alert("ফর্মটি সঠিকভাবে পূরণ করুন!");
+                alert("Fill The Form Correctly!");
 
             } else {
 
                 $.ajax({
-                    url: 'script/holding-form-data-insert',
+                    url: 'script/form-data-insert-directions',
                     type: 'POST',
-                    data: $('#holding-form-data').serialize(),
+                    data: $('#directions-form-data').serialize(),
                     beforeSend: function () {
                         $("#submit-btn").html(
                             '<img src="assets/images/loader.gif" width="30" />');
                         $('#loader').show();
                     },
                     success: function (data) {
-                        $("#submit-btn").html('<i class="fa fa-save"></i> তথ্য সংরক্ষণ করুন');
+                        $("#submit-btn").html('<i class="fa fa-save"></i> Save Direction');
                         $('#response').fadeIn();
                         $('#response').html(data);
-                        $("#holding-form-data").hide();
+                        $("#directions-form-data").hide();
                         $('#loader').hide();
                     }
                 });
@@ -119,13 +137,65 @@
 
 <script>
     function showForm () {
-        $('#holding-form-data').trigger("reset");
-        $('#holding-form-data').show();
+        $('#directions-form-data').trigger("reset");
+        $('#directions-form-data').show();
         $('#response').hide();
     }
     function reTryForm () {
-        $('#holding-form-data').show();
+        $('#directions-form-data').show();
         $('#response').hide();
+    }
+</script>
+
+
+<script>
+    function add_more(){
+        var box_count=jQuery("#box_count").val();
+        box_count++;
+        jQuery("#box_count").val(box_count);
+        jQuery("#form-wrap").append('<table id="box_loop_'+box_count+'">' +
+            '                    <tbody>' +
+            '                    <tr>' +
+            '                        <td>' +
+            '                        </td>' +
+            '                        <td>' +
+            '                            <label>Place Name:</label>' +
+            '                            <select name="placeName'+box_count+'" id="placeName'+box_count+'">' +
+            '                            <option value="" selected hidden>-- Select Place --</option>' +
+'<?php
+    require ('configs/database-connection.php');
+    $sqlp = "SELECT * FROM all_places";
+    $resultp = mysqli_query($db, $sqlp);
+    $countp = mysqli_num_rows($resultp);
+    if ($countp > 0) {
+        while ($rowp = mysqli_fetch_array($resultp, MYSQLI_ASSOC)) {
+    ?>'+
+            '<option value="<?php echo $rowp['place_id']; ?>"><?php echo $rowp['placeNameEn']; ?> (<?php echo $rowp['placeNameBn']; ?>)</option>'+
+'<?php
+   }
+?>
+<?php
+} else {
+    echo "<option value=''><i>No Place Found!</i></option>";
+}
+?>' +
+            '                        </td>' +
+            '                        <td>' +
+            '                            <label>Place Distance (KM):</label>' +
+            '                            <input type="text" name="placeDistance'+box_count+'" id="placeDistance'+box_count+'" value="">' +
+            '                        </td>' +
+            '                        <td>' +
+            '                            <a onclick="remove_more('+box_count+')" class="delete-btn2" style="display:inline-block;margin: 0;margin-top: 20px;"><i class="fa fa-trash"></i> Remove</a>' +
+            '                        </td>' +
+            '                    </tr>' +
+            '                    </tbody>' +
+            '                </table>');
+    }
+    function remove_more(box_count){
+        jQuery("#box_loop_"+box_count).remove();
+        var box_count=jQuery("#box_count").val();
+        box_count--;
+        jQuery("#box_count").val(box_count);
     }
 </script>
 
