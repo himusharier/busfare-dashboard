@@ -73,7 +73,7 @@ if (mysqli_num_rows($result) == 1) {
 
             <form id="form-delete-btn" method="post" enctype="multipart/form-data" onsubmit="return confirm('Are You Sure To Delete This Place?');">
                 <input type="hidden" name="placeID" value="<?php echo $row['place_id']; ?>">
-                <button type="submit" name="delete-btn" id="delete-btn" class="delete-btn"><i class="fa fa-trash"></i> Delete</button>
+                <button type="submit" name="delete-btn" id="delete-btn" class="delete-btn"><i class="fa fa-trash"></i> Delete Place</button>
             </form>
 
 

@@ -78,7 +78,7 @@
                             <label>Place Distance (KM):</label>
                             <input type="text" name="placeDistance1" id="placeDistance1" value="">
                         </td>
-                        <td><a onclick="add_more()" class="add-btn2" style="display:inline-block;margin: 0;margin-top: 20px; border-radius: 2px;"><i class="fa fa-plus"></i> Add Another Place</a></td>
+                        <td><a onclick="add_more()" class="add-btn2" style="display:inline-block;margin: 0;margin-top: 20px; border-radius: 4px;"><i class="fa fa-plus"></i> Add Another Place</a></td>
                     </tr>
                     </tbody>
                 </table>
@@ -185,7 +185,7 @@
             '                            <input type="text" name="placeDistance'+box_count+'" id="placeDistance'+box_count+'" value="">' +
             '                        </td>' +
             '                        <td>' +
-            '                            <a onclick="remove_more('+box_count+')" class="delete-btn2" style="display:inline-block;margin: 0;margin-top: 20px;"><i class="fa fa-trash"></i> Remove</a>' +
+            '                            <a onclick="remove_more('+box_count+')" class="delete-btn2" style="display:inline-block;margin: 0;margin-top: 20px;border-radius: 4px;"><i class="fa fa-trash"></i> Remove</a>' +
             '                        </td>' +
             '                    </tr>' +
             '                    </tbody>' +

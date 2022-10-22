@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+$entryPersonId = $_SESSION["admin_user_id"];
+if (!isset($entryPersonId)) {
+    $_SESSION["admin_login_first_msg"] = "<div class='error_msg'>Please, Login First!</div>";
+    include ('bkend-calls/admin-logout.php');
+    echo "<script type='text/javascript'> document.location = '../login'; </script>";
+    exit();
+}
 
 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['directionID']) && !isset($_POST['delete-btn'])) {
 

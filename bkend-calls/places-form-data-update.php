@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+$entryPersonId = $_SESSION["admin_user_id"];
+if (!isset($entryPersonId)) {
+    $_SESSION["admin_login_first_msg"] = "<div class='error_msg'>Please, Login First!</div>";
+    include ('bkend-calls/admin-logout.php');
+    echo "<script type='text/javascript'> document.location = '../login'; </script>";
+    exit();
+}
 
 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['placeID']) && !isset($_POST['delete-btn'])) {
 
@@ -23,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['placeID']) && !isset($
 
         if (mysqli_query($db, $sql)) {
 
-            echo "<div class='reg-form-message-green'><br/><i class='fa fa-check'></i> <b>Place Updated Successfully!</b><br/><br/><a href='admin/see-place-list' type='button' onclick='showForm();' name='renew-btn' class='cancel-btn' style='display: inline-block;padding: 10px 20px; border-radius: 4px; margin: 30px 0;'><i class='fa fa-arrow-left'></i> See Place List</a></div>
+            echo "<div class='reg-form-message-green'><br/><i class='fa fa-check'></i> <b>Place Updated Successfully!</b><br/><br/><a href='admin/see-place-list' type='button' onclick='LoaderShow();' name='renew-btn' class='cancel-btn' style='display: inline-block;padding: 10px 20px; border-radius: 4px; margin: 30px 0;'><i class='fa fa-arrow-left'></i> See Place List</a></div>
                     
                     ";
 

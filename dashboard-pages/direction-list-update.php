@@ -1,6 +1,4 @@
-
 <?php
-
 
 if (empty($_POST["directionID"])) {
     echo "<script type='text/javascript'> document.location = 'admin/see-direction-list'; </script>";
@@ -22,7 +20,7 @@ if (isset($_POST['delete-btn']) && $user_role == "admin"){
     }
 }
 
-if (isset($_POST['family-delete-btn']) && $_POST['directionFieldId']){
+if (isset($_POST['direction-delete-btn']) && $_POST['directionFieldId']){
 
     $directionID = $_POST["directionID"];
     $directionFieldId = $_POST['directionFieldId'];
@@ -150,7 +148,7 @@ if (mysqli_num_rows($result) > 0) {
                                     <form method="post" enctype="multipart/form-data">
                                     <input type="hidden" name="directionID" value="<?php echo $row['directionRoute']; ?>">
                                     <input type="hidden" name="directionFieldId" value="<?php echo $rowrdl["direction_id"]; ?>">
-                                    <button onclick="return confirm('Are You Sure To Delete This Place?');" type="submit" name="family-delete-btn" id="family-delete-btn" class="delete-btn2" style="margin: 0;margin-top: 20px;"><i class="fa fa-trash"></i> Delete</button>
+                                    <button onclick="return confirm('Are You Sure To Delete This Place?');" type="submit" name="direction-delete-btn" id="direction-delete-btn" class="delete-btn2" style="margin: 0;margin-top: 20px;"><i class="fa fa-trash"></i> Delete</button>
                                     </form>
                                 </td>
                             </tr>
