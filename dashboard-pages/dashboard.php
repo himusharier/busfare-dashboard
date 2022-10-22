@@ -67,7 +67,7 @@
             <div class="dashboard-element-body">
                 <div class="dashboard-card-2">
                     <h3>Total Requests:
-                        <a href="admin/list-house-holding" style="text-decoration: none; color: #024457;font-size: 18px;margin-bottom: 20px;display: inline-block;"><i class="fa fa-external-link"></i></a>
+                        <a href="admin/api-requests" style="text-decoration: none; color: #024457;font-size: 18px;margin-bottom: 20px;display: inline-block;"><i class="fa fa-external-link"></i></a>
                     </h3>
                     <?php
                     $sqldre = "SELECT * FROM api_requests";
@@ -94,7 +94,7 @@
                         <td><?php echo $rowApiStatusShow; ?></td>
                     </tr>
                     <tr>
-                        <td>Fair Rate</td>
+                        <td>Fair Rate (Per KM)</td>
                         <td><?php echo $rowFairRateShow; ?> Taka</td>
                     </tr>
                     <tr>
@@ -102,7 +102,7 @@
                         <td><?php echo $countdre; ?></td>
                     </tr>
                     <tr>
-                        <td>Last Request</td>
+                        <td>Last Request Time</td>
                         <td>22-10-2022; 04:52:37 PM</td>
                     </tr>
                     <tr>

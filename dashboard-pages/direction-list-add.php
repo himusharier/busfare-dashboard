@@ -162,23 +162,23 @@
             '                            <label>Place Name:</label>' +
             '                            <select name="placeName'+box_count+'" id="placeName'+box_count+'">' +
             '                            <option value="" selected hidden>-- Select Place --</option>' +
-'<?php
-    require ('configs/database-connection.php');
-    $sqlp = "SELECT * FROM all_places";
-    $resultp = mysqli_query($db, $sqlp);
-    $countp = mysqli_num_rows($resultp);
-    if ($countp > 0) {
-        while ($rowp = mysqli_fetch_array($resultp, MYSQLI_ASSOC)) {
-    ?>'+
-            '<option value="<?php echo $rowp['place_id']; ?>"><?php echo $rowp['placeNameEn']; ?> (<?php echo $rowp['placeNameBn']; ?>)</option>'+
-'<?php
-   }
-?>
-<?php
-} else {
-    echo "<option value=''><i>No Place Found!</i></option>";
-}
-?>' +
+            '<?php
+                require ('configs/database-connection.php');
+                $sqlp = "SELECT * FROM all_places";
+                $resultp = mysqli_query($db, $sqlp);
+                $countp = mysqli_num_rows($resultp);
+                if ($countp > 0) {
+                    while ($rowp = mysqli_fetch_array($resultp, MYSQLI_ASSOC)) {
+                ?>' +
+            '<option value="<?php echo $rowp['place_id']; ?>"><?php echo $rowp['placeNameEn']; ?> (<?php echo $rowp['placeNameBn']; ?>)</option>' +
+            '<?php
+               }
+            ?>' +
+            '<?php
+            } else {
+                echo '<option value=""><i>No Place Found!</i></option>';
+            }
+            ?>' +
             '                        </td>' +
             '                        <td>' +
             '                            <label>Place Distance (KM):</label>' +
