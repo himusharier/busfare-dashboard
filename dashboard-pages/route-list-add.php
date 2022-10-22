@@ -21,7 +21,20 @@
                     <tr>
                         <td>
                             <label>Route No:</label>
-                            <input type="text" name="routeNo" id="routeNo" value="">
+                            <input type="text" list="routeNoList" name="routeNo" id="routeNo" value="">
+                            <datalist id="routeNoList">
+                                <?php
+                                require ('configs/database-connection.php');
+                                $sqlpr = "SELECT * FROM all_routes";
+                                $resultpr = mysqli_query($db, $sqlpr);
+                                $countpr = mysqli_num_rows($resultpr);
+                                while ($rowpr = mysqli_fetch_array($resultpr, MYSQLI_ASSOC)) {
+                                    ?>
+                                    <option value="<?php echo $rowpr['route_no']; ?>"><?php echo $rowpr['route_no']; ?></option>
+                                    <?php
+                                }
+                                ?>
+                            </datalist>
                         </td>
                         <td>
                             <label>Route Start Place:</label>

@@ -34,6 +34,23 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         $_SESSION["admin_username"] = $userName;
                         $_SESSION["admin_user_pass"] = $loginPass;
                         $_SESSION["admin_role"] = $row['role'];
+
+                        $ch=curl_init();
+                        curl_setopt($ch,CURLOPT_URL,"http://ip-api.com/json");
+                        curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+                        $result=curl_exec($ch);
+                        $result=json_decode($result);
+                        if($result->status=='success'){
+                            $lastLocation = $result->city;
+                            $lastIP = $result->query;
+                        }
+
+                        //$lastIP = getenv('HTTP_CLIENT_IP') ?: getenv('HTTP_X_FORWARDED_FOR') ?: getenv('HTTP_X_FORWARDED') ?: getenv('HTTP_FORWARDED_FOR') ?: getenv('HTTP_FORWARDED') ?: getenv('REMOTE_ADDR');
+                        date_default_timezone_set('Asia/Dhaka');
+                        $lastLogin = date('d-m-Y; g:i:s A');
+                        $pr1Sql = "UPDATE user_admin SET last_ip='$lastIP', last_login='$lastLogin', last_location='$lastLocation' WHERE (user_id='{$row['user_id']}')";
+                        mysqli_query($db, $pr1Sql);
+
                         echo 1;
                         exit();
 

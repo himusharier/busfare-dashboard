@@ -44,7 +44,7 @@ if (mysqli_num_rows($result) == 1) {
             <form id="places-form-data" method="post" enctype="multipart/form-data">
 
                 <div class="dashboard-table-container" style="margin-bottom: 0px;">
-                    <p class="dashboard-table-container-heading">Update Place</p>
+                    <p class="dashboard-table-container-heading"><i class="fa fa-map"></i> Update Place</p>
                     <div class="dashboard-table-container-div">
 
                         <table>
@@ -52,11 +52,37 @@ if (mysqli_num_rows($result) == 1) {
                             <tr>
                                 <td>
                                     <label>Place Name (EN)</label>
-                                    <input type="text" name="placeNameEn1" id="placeNameEn1" value="<?php echo $row['placeNameEn']; ?>">
+                                    <input type="text" list="placeNameEnList1" name="placeNameEn1" id="placeNameEn1" value="<?php echo $row['placeNameEn']; ?>">
+                                    <datalist id="placeNameEnList1">
+                                        <?php
+                                        require ('configs/database-connection.php');
+                                        $sqlp = "SELECT * FROM all_places";
+                                        $resultp = mysqli_query($db, $sqlp);
+                                        $countp = mysqli_num_rows($resultp);
+                                        while ($rowp = mysqli_fetch_array($resultp, MYSQLI_ASSOC)) {
+                                            ?>
+                                            <option value="<?php echo $rowp['placeNameEn']; ?>"><?php echo $rowp['placeNameEn']; ?></option>
+                                            <?php
+                                        }
+                                        ?>
+                                    </datalist>
                                 </td>
                                 <td>
                                     <label>Place Name (BN)</label>
-                                    <input type="text" name="placeNameBn1" id="placeNameBn1" value="<?php echo $row['placeNameBn']; ?>">
+                                    <input type="text" list="placeNameBnList1" name="placeNameBn1" id="placeNameBn1" value="<?php echo $row['placeNameBn']; ?>">
+                                    <datalist id="placeNameBnList1">
+                                        <?php
+                                        require ('configs/database-connection.php');
+                                        $sqlp = "SELECT * FROM all_places";
+                                        $resultp = mysqli_query($db, $sqlp);
+                                        $countp = mysqli_num_rows($resultp);
+                                        while ($rowp = mysqli_fetch_array($resultp, MYSQLI_ASSOC)) {
+                                            ?>
+                                            <option value="<?php echo $rowp['placeNameBn']; ?>"><?php echo $rowp['placeNameBn']; ?></option>
+                                            <?php
+                                        }
+                                        ?>
+                                    </datalist>
                                 </td>
                                 <td></td>
                             </tr>

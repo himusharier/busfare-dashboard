@@ -70,7 +70,7 @@ if (mysqli_num_rows($result) > 0) {
             <form id="directions-form-data" method="post" enctype="multipart/form-data">
 
                 <div class="dashboard-table-container" style="margin-bottom: 0px;">
-                    <p class="dashboard-table-container-heading">Update Directions</p>
+                    <p class="dashboard-table-container-heading"><i class="fa fa-compass"></i> Update Directions</p>
                     <div class="dashboard-table-container-div" id="form-wrap">
 
                         <table>

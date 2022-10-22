@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 21, 2022 at 10:02 PM
+-- Generation Time: Oct 22, 2022 at 07:16 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -34,18 +34,6 @@ CREATE TABLE `all_directions` (
   `direction_distance` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `all_directions`
---
-
-INSERT INTO `all_directions` (`direction_id`, `direction_route`, `direction_place`, `direction_distance`) VALUES
-(3, '368', '9', '6.7'),
-(8, '368', '3', '2.1'),
-(13, '317', '8', '2.8'),
-(16, '317', '8', '4.4'),
-(17, '368', '12', '2.2'),
-(18, '317', '9', '2');
-
 -- --------------------------------------------------------
 
 --
@@ -57,43 +45,6 @@ CREATE TABLE `all_places` (
   `placeNameEn` varchar(50) NOT NULL,
   `placeNameBn` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `all_places`
---
-
-INSERT INTO `all_places` (`place_id`, `placeNameEn`, `placeNameBn`) VALUES
-(3, 'Fantasy Kingdom', 'ফ্যান্টাসী কিংডম'),
-(4, 'Jatrabari', 'যাত্রাবাড়ী'),
-(5, 'Jatrabari', 'যাত্রাবাড়ী'),
-(6, 'Jatrabari', 'যাত্রাবাড়ী'),
-(7, 'Signboard', 'সাইনবোর্ড'),
-(8, 'Jatrabari', 'যাত্রাবাড়ী'),
-(9, 'Signboard', 'সাইনবোর্ড'),
-(10, 'Jatrabari', 'যাত্রাবাড়ী'),
-(11, 'Jatrabari', 'যাত্রাবাড়ী'),
-(12, 'Jatrabari', 'যাত্রাবাড়ী'),
-(13, 'Jatrabari', 'যাত্রাবাড়ী'),
-(14, 'Jatrabari', 'যাত্রাবাড়ী'),
-(15, 'Jatrabari', 'যাত্রাবাড়ী'),
-(16, 'Jatrabari', 'যাত্রাবাড়ী'),
-(17, 'Jatrabari', 'যাত্রাবাড়ী'),
-(18, 'Jatrabari', 'যাত্রাবাড়ী'),
-(19, 'Jatrabari', 'যাত্রাবাড়ী'),
-(20, 'Jatrabari', 'যাত্রাবাড়ী'),
-(21, 'Jatrabari', 'যাত্রাবাড়ী'),
-(22, 'Jatrabari', 'যাত্রাবাড়ী'),
-(23, 'Jatrabari', 'যাত্রাবাড়ী'),
-(24, 'Jatrabari', 'যাত্রাবাড়ী'),
-(25, 'Jatrabari', 'যাত্রাবাড়ী'),
-(26, 'Jatrabari', 'যাত্রাবাড়ী'),
-(27, 'Jatrabari', 'যাত্রাবাড়ী'),
-(28, 'Jatrabari', 'যাত্রাবাড়ী'),
-(29, 'Jatrabari', 'যাত্রাবাড়ী'),
-(30, 'Jatrabari', 'যাত্রাবাড়ী'),
-(31, 'Jatrabari', 'যাত্রাবাড়ী'),
-(34, 'Jatrabari', 'যাত্রাবাড়ী'),
-(35, 'Signboard', 'সাইনবোর্ড');
 
 -- --------------------------------------------------------
 
@@ -108,13 +59,19 @@ CREATE TABLE `all_routes` (
   `routeEndPlace` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `all_routes`
+-- Table structure for table `api_requests`
 --
 
-INSERT INTO `all_routes` (`route_id`, `route_no`, `routeStartPlace`, `routeEndPlace`) VALUES
-(1, '317', '4', '7'),
-(2, '368', '3', '7');
+CREATE TABLE `api_requests` (
+  `id` int(11) NOT NULL,
+  `ipAddress` varchar(30) NOT NULL,
+  `location` varchar(100) NOT NULL,
+  `date` varchar(20) NOT NULL,
+  `time` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -124,6 +81,7 @@ INSERT INTO `all_routes` (`route_id`, `route_no`, `routeStartPlace`, `routeEndPl
 
 CREATE TABLE `site_settings` (
   `id` int(11) NOT NULL,
+  `settingsType` varchar(20) NOT NULL,
   `settingsTitle` varchar(50) NOT NULL,
   `settingsValue` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -132,8 +90,10 @@ CREATE TABLE `site_settings` (
 -- Dumping data for table `site_settings`
 --
 
-INSERT INTO `site_settings` (`id`, `settingsTitle`, `settingsValue`) VALUES
-(1, 'siteName', 'BusFair');
+INSERT INTO `site_settings` (`id`, `settingsType`, `settingsTitle`, `settingsValue`) VALUES
+(1, 'site', 'siteName', 'BusFair'),
+(2, 'api', 'apiStatus', 'Inactive'),
+(3, 'api', 'fairRate', '2.5');
 
 -- --------------------------------------------------------
 
@@ -148,17 +108,20 @@ CREATE TABLE `user_admin` (
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `full_name` varchar(100) NOT NULL,
-  `activation_status` varchar(20) NOT NULL
+  `activation_status` varchar(20) NOT NULL,
+  `last_ip` varchar(30) NOT NULL,
+  `last_location` varchar(100) NOT NULL,
+  `last_login` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user_admin`
 --
 
-INSERT INTO `user_admin` (`id`, `user_id`, `role`, `username`, `password`, `full_name`, `activation_status`) VALUES
-(1, '111', 'admin', 'himu', '419715', 'Sharier Himu', 'active'),
-(2, '0001', 'admin', 'piyal', '453860', 'Piyal Ahmed', 'active'),
-(3, '0002', 'admin', 'sajal', '089747', 'Sajal Halder', 'active');
+INSERT INTO `user_admin` (`id`, `user_id`, `role`, `username`, `password`, `full_name`, `activation_status`, `last_ip`, `last_location`, `last_login`) VALUES
+(1, '111', 'admin', 'himu', '419715', 'Sharier Himu', 'active', '59.153.16.129', 'Barishal', '22-10-2022; 11:04:49 PM'),
+(2, '0001', 'admin', 'piyal', '453860', 'Piyal Ahmed', 'active', '', '', ''),
+(3, '0002', 'admin', 'sajal', '089747', 'Sajal Halder', 'active', '', '', '');
 
 --
 -- Indexes for dumped tables
@@ -183,6 +146,12 @@ ALTER TABLE `all_routes`
   ADD PRIMARY KEY (`route_id`);
 
 --
+-- Indexes for table `api_requests`
+--
+ALTER TABLE `api_requests`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `site_settings`
 --
 ALTER TABLE `site_settings`
@@ -202,25 +171,31 @@ ALTER TABLE `user_admin`
 -- AUTO_INCREMENT for table `all_directions`
 --
 ALTER TABLE `all_directions`
-  MODIFY `direction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `direction_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `all_places`
 --
 ALTER TABLE `all_places`
-  MODIFY `place_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `place_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `all_routes`
 --
 ALTER TABLE `all_routes`
-  MODIFY `route_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `route_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `api_requests`
+--
+ALTER TABLE `api_requests`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `site_settings`
 --
 ALTER TABLE `site_settings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user_admin`

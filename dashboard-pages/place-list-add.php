@@ -13,7 +13,7 @@
     <form id="places-form-data" method="post" enctype="multipart/form-data">
 
         <div class="dashboard-table-container" style="margin-bottom: 0px;">
-            <p class="dashboard-table-container-heading"><i class="fa fa-road"></i> Add New Place</p>
+            <p class="dashboard-table-container-heading"><i class="fa fa-map"></i> Add New Place</p>
             <div class="dashboard-table-container-div" id="form-wrap">
 
                 <table>
@@ -21,11 +21,37 @@
                     <tr>
                         <td>
                             <label>Place Name (EN)</label>
-                            <input type="text" name="placeNameEn1" id="placeNameEn1" value="">
+                            <input type="text" list="placeNameEnList1" name="placeNameEn1" id="placeNameEn1" value="">
+                            <datalist id="placeNameEnList1">
+                                <?php
+                                require ('configs/database-connection.php');
+                                $sqlp = "SELECT * FROM all_places";
+                                $resultp = mysqli_query($db, $sqlp);
+                                $countp = mysqli_num_rows($resultp);
+                                while ($rowp = mysqli_fetch_array($resultp, MYSQLI_ASSOC)) {
+                                ?>
+                                    <option value="<?php echo $rowp['placeNameEn']; ?>"><?php echo $rowp['placeNameEn']; ?></option>
+                                <?php
+                                }
+                                ?>
+                            </datalist>
                         </td>
                         <td>
                             <label>Place Name (BN)</label>
-                            <input type="text" name="placeNameBn1" id="placeNameBn1" value="">
+                            <input type="text" list="placeNameBnList1" name="placeNameBn1" id="placeNameBn1" value="">
+                            <datalist id="placeNameBnList1">
+                                <?php
+                                require ('configs/database-connection.php');
+                                $sqlp = "SELECT * FROM all_places";
+                                $resultp = mysqli_query($db, $sqlp);
+                                $countp = mysqli_num_rows($resultp);
+                                while ($rowp = mysqli_fetch_array($resultp, MYSQLI_ASSOC)) {
+                                ?>
+                                    <option value="<?php echo $rowp['placeNameBn']; ?>"><?php echo $rowp['placeNameBn']; ?></option>
+                                <?php
+                                }
+                                ?>
+                            </datalist>
                         </td>
                         <td><a onclick="add_more()" class="add-btn2" style="display:inline-block;margin: 0;margin-top: 20px; border-radius: 4px;"><i class="fa fa-plus"></i> Add Another Place</a></td>
                     </tr>
@@ -106,11 +132,37 @@
             '                    <tr>' +
             '                        <td>' +
             '                            <label>Place Name (EN)</label>' +
-            '                            <input type="text" name="placeNameEn'+box_count+'" value="">' +
+            '                            <input type="text" list="placeNameEnList'+box_count+'" name="placeNameEn'+box_count+'" value="">' +
+            '<datalist id="placeNameEnList'+box_count+'">' +
+            '<?php
+            require ('configs/database-connection.php');
+            $sqlp = "SELECT * FROM all_places";
+            $resultp = mysqli_query($db, $sqlp);
+            $countp = mysqli_num_rows($resultp);
+            while ($rowp = mysqli_fetch_array($resultp, MYSQLI_ASSOC)) {
+            ?>' +
+            '<option value="<?php echo $rowp['placeNameEn']; ?>"><?php echo $rowp['placeNameEn']; ?></option>' +
+            '<?php
+            }
+            ?>' +
+            '</datalist>' +
             '                        </td>' +
             '                        <td>' +
             '                            <label>Place Name (BN)</label>' +
-            '                            <input type="text" name="placeNameBn'+box_count+'" value="">' +
+            '                            <input type="text" list="placeNameBnList'+box_count+'" name="placeNameBn'+box_count+'" value="">' +
+            '<datalist id="placeNameBnList'+box_count+'">' +
+            '<?php
+                require ('configs/database-connection.php');
+                $sqlp = "SELECT * FROM all_places";
+                $resultp = mysqli_query($db, $sqlp);
+                $countp = mysqli_num_rows($resultp);
+                while ($rowp = mysqli_fetch_array($resultp, MYSQLI_ASSOC)) {
+                ?>' +
+            '<option value="<?php echo $rowp['placeNameBn']; ?>"><?php echo $rowp['placeNameBn']; ?></option>' +
+            '<?php
+                }
+                ?>' +
+            '</datalist>' +
             '                        </td>' +
             '                        <td>' +
             '                            <a onclick="remove_more('+box_count+')" class="delete-btn2" style="display:inline-block;margin: 0;margin-top: 20px;border-radius: 4px;"><i class="fa fa-trash"></i> Remove</a>' +
