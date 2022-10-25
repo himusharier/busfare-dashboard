@@ -24,7 +24,6 @@
                             <input type="text" list="routeNoList" name="routeNo" id="routeNo" value="">
                             <datalist id="routeNoList">
                                 <?php
-                                require ('configs/database-connection.php');
                                 $sqlpr = "SELECT * FROM all_routes";
                                 $resultpr = mysqli_query($db, $sqlpr);
                                 $countpr = mysqli_num_rows($resultpr);
@@ -41,7 +40,6 @@
                             <select name="routeStartPlace" id="routeStartPlace">
                                 <option value="" selected hidden>-- Select Place --</option>
                                 <?php
-                                require ('configs/database-connection.php');
                                 $sqlp = "SELECT * FROM all_places";
                                 $resultp = mysqli_query($db, $sqlp);
                                 $countp = mysqli_num_rows($resultp);
@@ -64,7 +62,6 @@
                             <select name="routeEndPlace" id="routeEndPlace">
                                 <option value="" selected hidden>-- Select Place --</option>
                                 <?php
-                                require ('configs/database-connection.php');
                                 $sqlp = "SELECT * FROM all_places";
                                 $resultp = mysqli_query($db, $sqlp);
                                 $countp = mysqli_num_rows($resultp);

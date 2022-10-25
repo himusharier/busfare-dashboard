@@ -35,7 +35,6 @@
             <tbody>
 
             <?php
-            require ('configs/database-connection.php');
             $sqlp = "SELECT * FROM api_requests";
             $resultp = mysqli_query($db, $sqlp);
             $countp = mysqli_num_rows($resultp);

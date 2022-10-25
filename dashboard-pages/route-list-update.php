@@ -1,13 +1,9 @@
-
 <?php
-
 
 if (empty($_POST["routeID"])) {
     echo "<script type='text/javascript'> document.location = 'admin/see-route-list'; </script>";
     die();
 }
-
-include "../configs/database-connection.php";
 
 $routeID = $_POST["routeID"];
 
@@ -74,7 +70,6 @@ if (mysqli_num_rows($result) == 1) {
                                     <input type="text" list="routeNoList" name="routeNo" id="routeNo" value="<?php echo $row["route_no"]; ?>">
                                     <datalist id="routeNoList">
                                         <?php
-                                        require ('configs/database-connection.php');
                                         $sqlpr = "SELECT * FROM all_routes";
                                         $resultpr = mysqli_query($db, $sqlpr);
                                         $countpr = mysqli_num_rows($resultpr);
@@ -94,7 +89,6 @@ if (mysqli_num_rows($result) == 1) {
                                             (<?php echo place_name_bn($row["routeStartPlace"]); ?>)
                                         </option>
                                         <?php
-                                        require ('configs/database-connection.php');
                                         $sqlp = "SELECT * FROM all_places";
                                         $resultp = mysqli_query($db, $sqlp);
                                         $countp = mysqli_num_rows($resultp);
@@ -120,7 +114,6 @@ if (mysqli_num_rows($result) == 1) {
                                             (<?php echo place_name_bn($row["routeEndPlace"]); ?>)
                                         </option>
                                         <?php
-                                        require ('configs/database-connection.php');
                                         $sqlp = "SELECT * FROM all_places";
                                         $resultp = mysqli_query($db, $sqlp);
                                         $countp = mysqli_num_rows($resultp);

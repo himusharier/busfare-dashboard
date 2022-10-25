@@ -24,7 +24,6 @@
                             <input type="text" list="placeNameEnList1" name="placeNameEn1" id="placeNameEn1" value="">
                             <datalist id="placeNameEnList1">
                                 <?php
-                                require ('configs/database-connection.php');
                                 $sqlp = "SELECT * FROM all_places";
                                 $resultp = mysqli_query($db, $sqlp);
                                 $countp = mysqli_num_rows($resultp);
@@ -41,7 +40,6 @@
                             <input type="text" list="placeNameBnList1" name="placeNameBn1" id="placeNameBn1" value="">
                             <datalist id="placeNameBnList1">
                                 <?php
-                                require ('configs/database-connection.php');
                                 $sqlp = "SELECT * FROM all_places";
                                 $resultp = mysqli_query($db, $sqlp);
                                 $countp = mysqli_num_rows($resultp);

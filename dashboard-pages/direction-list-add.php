@@ -24,7 +24,6 @@
                             <select name="routeNo" id="routeNo">
                                 <option value="" selected hidden>-- Select Route --</option>
                                 <?php
-                                require ('configs/database-connection.php');
                                 $sqlr = "SELECT * FROM all_routes";
                                 $resultr = mysqli_query($db, $sqlr);
                                 $countr = mysqli_num_rows($resultr);
@@ -56,7 +55,6 @@
                             <select name="placeName1" id="placeName1">
                                 <option value="" selected hidden>-- Select Place --</option>
                                 <?php
-                                require ('configs/database-connection.php');
                                 $sqlp = "SELECT * FROM all_places";
                                 $resultp = mysqli_query($db, $sqlp);
                                 $countp = mysqli_num_rows($resultp);

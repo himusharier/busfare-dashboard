@@ -1,4 +1,5 @@
 <?php
+include ('configs/database-connection.php');
 require('bkend-calls/admin-afterLogin-checks.php');
 include('configs/canonical-link.php');
 include('bkend-calls/admin-siteSettings-checks.php');

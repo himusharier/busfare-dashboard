@@ -5,8 +5,6 @@ if (empty($_POST["directionID"])) {
     die();
 }
 
-include "../configs/database-connection.php";
-
 $directionID = $_POST["directionID"];
 
 if (isset($_POST['delete-btn']) && $user_role == "admin"){

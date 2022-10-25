@@ -1,8 +1,3 @@
-<?php
-
-include "../configs/database-connection.php";
-
-?>
 
 <div class="header-main-container">
     <div class="header-container">

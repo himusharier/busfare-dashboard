@@ -44,19 +44,7 @@ if (isset($_SESSION["admin_user_id"]) && isset($_SESSION["admin_username"]) && i
 </head>
 
 <body>
-<!--
-<header style="display: none;">
-    <div class="header-bg-container">
-        <div class="header-main-container">
-            <div class="header-site-logo">
-                <a href="home"><img src="assets/images/favicon.png" alt="" height="40" /></a>
-                <a href="<?php echo $canonical_link; ?>" style="text-decoration: none; color: #1e2039; font-size: 32px; font-family: 'CustomFont';">&nbsp;<?php echo $rowChkSiteName["settingsValue"]; ?></a>
-            </div>
 
-        </div>
-    </div>
-</header>
--->
 <main>
     <div class="centering-container">
         <div class="centering-content">

@@ -94,6 +94,10 @@
                         <td><?php echo $rowApiStatusShow; ?></td>
                     </tr>
                     <tr>
+                        <td>API Version</td>
+                        <td><?php echo $rowApiStatusShow; ?></td>
+                    </tr>
+                    <tr>
                         <td>Fair Rate (Per KM)</td>
                         <td><?php echo $rowFairRateShow; ?> Taka</td>
                     </tr>
@@ -103,11 +107,11 @@
                     </tr>
                     <tr>
                         <td>Last Request Time</td>
-                        <td>22-10-2022; 04:52:37 PM</td>
+                        <td></td>
                     </tr>
                     <tr>
-                        <td>Last Request IP</td>
-                        <td>59.153.16.132</td>
+                        <td>Last Request Location</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>API Activity</td>

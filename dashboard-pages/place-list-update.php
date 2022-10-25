@@ -1,13 +1,9 @@
-
 <?php
-
 
 if (empty($_POST["placeID"])) {
     echo "<script type='text/javascript'> document.location = 'admin/see-place-list'; </script>";
     die();
 }
-
-include "../configs/database-connection.php";
 
 $placeID = $_POST["placeID"];
 
@@ -55,7 +51,6 @@ if (mysqli_num_rows($result) == 1) {
                                     <input type="text" list="placeNameEnList1" name="placeNameEn1" id="placeNameEn1" value="<?php echo $row['placeNameEn']; ?>">
                                     <datalist id="placeNameEnList1">
                                         <?php
-                                        require ('configs/database-connection.php');
                                         $sqlp = "SELECT * FROM all_places";
                                         $resultp = mysqli_query($db, $sqlp);
                                         $countp = mysqli_num_rows($resultp);
@@ -72,7 +67,6 @@ if (mysqli_num_rows($result) == 1) {
                                     <input type="text" list="placeNameBnList1" name="placeNameBn1" id="placeNameBn1" value="<?php echo $row['placeNameBn']; ?>">
                                     <datalist id="placeNameBnList1">
                                         <?php
-                                        require ('configs/database-connection.php');
                                         $sqlp = "SELECT * FROM all_places";
                                         $resultp = mysqli_query($db, $sqlp);
                                         $countp = mysqli_num_rows($resultp);

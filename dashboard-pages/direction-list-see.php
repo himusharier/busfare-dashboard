@@ -34,7 +34,6 @@
         <table class="responstable">
             <tbody>
             <?php
-            require ('configs/database-connection.php');
             $sqld = "SELECT DISTINCT direction_route as directionRoute FROM all_directions ORDER BY directionRoute ASC";
             $resultd = mysqli_query($db, $sqld);
             $countd = mysqli_num_rows($resultd);
@@ -86,7 +85,6 @@
                             <tbody>
 
                             <?php
-                            require ('configs/database-connection.php');
                             $sqldp = "SELECT * FROM all_directions WHERE direction_route = '{$rowd['directionRoute']}'";
                             $resultdp = mysqli_query($db, $sqldp);
                             while ($rowdp = mysqli_fetch_array($resultdp, MYSQLI_ASSOC)) {

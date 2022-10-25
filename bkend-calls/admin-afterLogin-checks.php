@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-include "configs/database-connection.php";
-
 $user_id = strip_tags($_SESSION["admin_user_id"]);
 $user_id = htmlspecialchars($user_id);
 $user_id = mysqli_real_escape_string($db, $user_id);
