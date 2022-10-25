@@ -18,4 +18,10 @@ $countFairRate = mysqli_num_rows($resultFairRate);
 $rowFairRate = mysqli_fetch_assoc($resultFairRate);
 $rowFairRateShow = $rowFairRate["settingsValue"];
 
+$sql_ApiVersion = "SELECT * FROM site_settings WHERE (settingsTitle = 'apiVersion')";
+$resultApiVersion = mysqli_query($db, $sql_ApiVersion);
+$countApiVersion = mysqli_num_rows($resultApiVersion);
+$rowApiVersion = mysqli_fetch_assoc($resultApiVersion);
+$rowFairApiVersion = $rowApiVersion["settingsValue"];
+
 ?>

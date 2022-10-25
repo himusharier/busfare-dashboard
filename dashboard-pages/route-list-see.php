@@ -57,23 +57,57 @@
                         $data2 = $data2["placeNameBn"];
                         return $data2;
                     }
+                    function banglaNumber($englishToBangla) {
+                        $englishNum=array("0","1","2","3","4","5",'6',"7","8","9","-","A");
+                        $banglaNum=array("০","১","২","৩","৪","৫",'৬',"৭","৮","৯","-","এ");
+                        return str_replace($englishNum,$banglaNum,$englishToBangla);
+                    }
                 ?>
                 <tr>
                     <th>Route No.</th>
-                    <th>Route Direction</th>
+                    <th>Route Full Directions</th>
                     <th class="printDisplayNone">Option</th>
                 </tr>
                 <?php
                 while ($rowp = mysqli_fetch_array($resultp, MYSQLI_ASSOC)) {
                 ?>
                 <tr>
-                    <td><?php echo $rowp['route_no']; ?></td>
                     <td>
+                        <a style="font-size: 22px;font-weight: bold;"><?php echo $rowp['route_no']; ?></a> <a style="font-family: BanglaFont;">(<?php echo banglaNumber($rowp['route_no']); ?>)</a>
+                        <br/><br/>
                         <?php echo place_name_en($rowp['routeStartPlace']); ?>
                         <i class="fa fa-long-arrow-right"></i>
                         <?php echo place_name_en($rowp['routeEndPlace']); ?>
                         <br/>
                         <a class="banglaFont">(<?php echo place_name_bn($rowp['routeStartPlace']); ?> <i class="fa fa-long-arrow-right"></i> <?php echo place_name_bn($rowp['routeEndPlace']); ?>)</a>
+                        <?php
+                        if (!empty($rowp['routeDistance'])) {
+                            echo "<br/><br/><a>Total Distance: <i><b>{$rowp['routeDistance']}</b> KM</i></a>";
+                        }
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                        $sqlpfd = "SELECT * FROM all_directions WHERE direction_route = '{$rowp['route_id']}'";
+                        $resultpfd = mysqli_query($db, $sqlpfd);
+                        $countpfd = mysqli_num_rows($resultpfd);
+                        if ($countpfd > 0) {
+                            while ($rowpfd = mysqli_fetch_array($resultpfd, MYSQLI_ASSOC)) {
+                                ?>
+                                <a class="direction-after-sign"><?php echo place_name_bn($rowpfd['direction_place']); ?></a>
+                        <?php
+                            }
+                        } else {
+                            echo "Full Route Direction Not Set Yet!";
+                        }
+                        ?>
+                        <!--
+                        <?php echo place_name_en($rowp['routeStartPlace']); ?>
+                        <i class="fa fa-long-arrow-right"></i>
+                        <?php echo place_name_en($rowp['routeEndPlace']); ?>
+                        <br/>
+                        <a class="banglaFont">(<?php echo place_name_bn($rowp['routeStartPlace']); ?> <i class="fa fa-long-arrow-right"></i> <?php echo place_name_bn($rowp['routeEndPlace']); ?>)</a>
+                        -->
                     </td>
                     <td class="printDisplayNone">
                         <form method="post" action="admin/update-route-list" style="display: inline-block;">

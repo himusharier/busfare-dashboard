@@ -25,7 +25,8 @@
         </div>
         <div class="item"><a id="<?php if($_GET['pageId']=='api-settings') {echo 'page-active';}?>" onclick="LoaderShow()" href="admin/settings"><i class="fa fa-cog"></i> API Settings</a></div>
         <div class="item"><a id="<?php if($_GET['pageId']=='api-requests') {echo 'page-active';}?>" onclick="LoaderShow()" href="admin/api-requests"><i class="fa fa-server"></i> API Requests</a></div>
-        <div class="item"><a id="<?php if($_GET['pageId']=='api-live') {echo 'page-active';}?>" onclick="LoaderShow()" href="admin/live-api"><i class="fa fa-cogs"></i> Live API</a></div>
+        <div class="item"><a id="<?php if($_GET['pageId']=='api-docs') {echo 'page-active';}?>" onclick="LoaderShow()" href="admin/api-docs"><i class="fa fa-cogs"></i> API Documentation</a></div>
+        <div class="item"><a id="<?php if($_GET['pageId']=='api-live') {echo 'page-active';}?>" href="https://busfair.codebug.dev/" target="_blank"><i class="fa fa-television"></i> Live API &nbsp;&nbsp;<i class="fa fa-external-link"></i></a></div>
 
     </div>
 </div>

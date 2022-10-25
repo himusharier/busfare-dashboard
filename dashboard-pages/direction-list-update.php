@@ -77,7 +77,7 @@ if (mysqli_num_rows($result) > 0) {
                                 <td>
                                     <label>Route No:</label>
                                     <?php
-                                    $sqlrd = "SELECT * FROM all_routes WHERE route_no = '{$row['directionRoute']}'";
+                                    $sqlrd = "SELECT * FROM all_routes WHERE route_id = '{$row['directionRoute']}'";
                                     $resultrd = mysqli_query($db, $sqlrd);
                                     $rowrd = mysqli_fetch_array($resultrd, MYSQLI_ASSOC)
                                     ?>

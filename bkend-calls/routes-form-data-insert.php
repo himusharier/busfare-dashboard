@@ -27,8 +27,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $routeNo = clean_inputs($_POST['routeNo']);
     $routeStartPlace = clean_inputs($_POST['routeStartPlace']);
     $routeEndPlace = clean_inputs($_POST['routeEndPlace']);
+    $routeTotalDistance = clean_inputs($_POST['routeTotalDistance']);
 
-    $sql_places = "INSERT INTO all_routes (route_no, routeStartPlace, routeEndPlace) VALUES ('{$routeNo}', '{$routeStartPlace}', '{$routeEndPlace}')";
+    $sql_places = "INSERT INTO all_routes (route_no, routeStartPlace, routeEndPlace, routeDistance) VALUES ('{$routeNo}', '{$routeStartPlace}', '{$routeEndPlace}', '{$routeTotalDistance}')";
 
     if (mysqli_query($db, $sql_places)) {
 

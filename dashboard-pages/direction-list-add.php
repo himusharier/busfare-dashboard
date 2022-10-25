@@ -39,7 +39,7 @@
                                     }
                                     while ($rowr = mysqli_fetch_array($resultr, MYSQLI_ASSOC)) {
                                         ?>
-                                        <option value="<?php echo $rowr['route_no']; ?>"><?php echo $rowr['route_no']; ?> (<?php echo place_name_en($rowr['routeStartPlace']); ?> - <?php echo place_name_en($rowr['routeEndPlace']); ?>)</option>
+                                        <option value="<?php echo $rowr['route_id']; ?>"><?php echo $rowr['route_no']; ?> (<?php echo place_name_en($rowr['routeStartPlace']); ?> - <?php echo place_name_en($rowr['routeEndPlace']); ?>)</option>
                                         <?php
                                     }
                                     ?>

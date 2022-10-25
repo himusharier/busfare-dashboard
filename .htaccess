@@ -45,4 +45,4 @@ RewriteRule ^admin/update-direction-list$ admin-dashboard.php?pageId=direction-l
 
 RewriteRule ^admin/settings$ admin-dashboard.php?pageId=api-settings
 RewriteRule ^admin/api-requests$ admin-dashboard.php?pageId=api-requests
-RewriteRule ^admin/live-api$ admin-dashboard.php?pageId=api-live
+RewriteRule ^admin/api-docs$ admin-dashboard.php?pageId=api-docs

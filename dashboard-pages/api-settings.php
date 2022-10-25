@@ -2,7 +2,7 @@
 
 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit-btn'])) {
 
-    $n = 2;
+    $n = 3;
     for($i=1;$i<=$n;$i++) {
         $updateSql = "UPDATE site_settings SET settingsValue='{$_POST['settingsValue'.$i]}' WHERE (settingsType ='api' AND id='{$_POST['settingsID'.$i]}')";
         if (mysqli_query($db, $updateSql)) {
@@ -44,10 +44,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit-btn'])) {
                     </td>
                 </tr>
                 <tr>
-                    <td>Fair Rate (Per KM)</td>
+                    <td>API Version</td>
                     <td>
-                        <input type="text" name="settingsValue2" id="settingsValue2" value="<?php echo $rowFairRateShow; ?>">
+                        <input type="text" name="settingsValue2" id="settingsValue2" value="<?php echo $rowFairApiVersion; ?>">
                         <input type="hidden" name="settingsID2" id="settingsID2" value="3">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fare Rate (Per KM)</td>
+                    <td>
+                        <input type="text" name="settingsValue3" id="settingsValue3" value="<?php echo $rowFairRateShow; ?>">
+                        <input type="hidden" name="settingsID3" id="settingsID3" value="4">
                     </td>
                 </tr>
                 </tbody>

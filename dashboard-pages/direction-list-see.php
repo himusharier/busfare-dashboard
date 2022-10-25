@@ -34,7 +34,7 @@
         <table class="responstable">
             <tbody>
             <?php
-            $sqld = "SELECT DISTINCT direction_route as directionRoute FROM all_directions ORDER BY directionRoute ASC";
+            $sqld = "SELECT DISTINCT direction_route as directionRoute FROM all_directions";
             $resultd = mysqli_query($db, $sqld);
             $countd = mysqli_num_rows($resultd);
             if ($countd > 0) {
@@ -56,6 +56,20 @@
                 $data2 = $data2["placeNameBn"];
                 return $data2;
             }
+            function get_route_name($data3)
+            {
+                include "configs/database-connection.php";
+                $data3 = "SELECT * FROM all_routes WHERE route_id = {$data3}";
+                $data3 = mysqli_query($db, $data3);
+                $data3 = mysqli_fetch_array($data3, MYSQLI_ASSOC);
+                $data3 = $data3["route_no"];
+                return $data3;
+            }
+                function banglaNumber($englishToBangla) {
+                    $englishNum=array("0","1","2","3","4","5",'6',"7","8","9","-","A");
+                    $banglaNum=array("০","১","২","৩","৪","৫",'৬',"৭","৮","৯","-","এ");
+                    return str_replace($englishNum,$banglaNum,$englishToBangla);
+                }
             ?>
                 <tr>
                     <th>Route Details</th>
@@ -67,10 +81,11 @@
             ?>
                 <tr>
                     <td style="vertical-align: top;">
-                        <a style="font-size: 26px;"><?php echo $rowd['directionRoute'] ?></a>
+                        <a style="font-size: 26px;font-weight: bold;"><?php echo get_route_name($rowd['directionRoute']) ?></a>
+                        <a style="font-family: BanglaFont;font-size: 18px;">(<?php echo banglaNumber(get_route_name($rowd['directionRoute'])); ?>)</a>
                         <br/><br/>
                         <?php
-                        $sqlp = "SELECT * FROM all_routes WHERE route_no = '{$rowd['directionRoute']}'";
+                        $sqlp = "SELECT * FROM all_routes WHERE route_id = '{$rowd['directionRoute']}'";
                         $resultp = mysqli_query($db, $sqlp);
                         $rowp = mysqli_fetch_array($resultp, MYSQLI_ASSOC);
                         ?>

@@ -1093,6 +1093,15 @@ legend {
 
 
 
+.direction-after-sign::after {
+    font-family: FontAwesome;
+    content: '\f178 ';
+}
+
+
+
+
+
 
 /*--------------------------------- // custom styles ------------------------------ */
 

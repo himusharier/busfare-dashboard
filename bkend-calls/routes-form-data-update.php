@@ -28,8 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['routeID']) && !isset($
     $routeNo = clean_inputs($_POST['routeNo']);
     $routeStartPlace = clean_inputs($_POST['routeStartPlace']);
     $routeEndPlace = clean_inputs($_POST['routeEndPlace']);
+    $routeTotalDistance = clean_inputs($_POST['routeTotalDistance']);
 
-    $sql = "UPDATE all_routes SET route_no='$routeNo', routeStartPlace='$routeStartPlace', routeEndPlace='$routeEndPlace' WHERE (route_id='$routeID')";
+    $sql = "UPDATE all_routes SET route_no='$routeNo', routeStartPlace='$routeStartPlace', routeEndPlace='$routeEndPlace', routeDistance='$routeTotalDistance' WHERE (route_id='$routeID')";
 
         if (mysqli_query($db, $sql)) {
 

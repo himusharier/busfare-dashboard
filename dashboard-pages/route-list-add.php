@@ -79,6 +79,10 @@
                                 ?>
                             </select>
                         </td>
+                        <td>
+                            <label>Route Total Distance (KM):</label>
+                            <input type="text" name="routeTotalDistance" id="routeTotalDistance" value="">
+                        </td>
                     </tr>
                     </tbody>
                 </table>
@@ -102,8 +106,9 @@
             var routeNo = $("#routeNo").val().trim();
             var routeStartPlace = $("#routeStartPlace").val().trim();
             var routeEndPlace = $("#routeEndPlace").val().trim();
+            var routeTotalDistance = $("#routeTotalDistance").val().trim();
 
-            if(routeNo == "" || routeStartPlace == "" || routeEndPlace == "") {
+            if(routeNo == "" || routeStartPlace == "" || routeEndPlace == "" || routeTotalDistance == "") {
 
                 alert("Fill The Form Correctly!");
 

@@ -95,10 +95,10 @@
                     </tr>
                     <tr>
                         <td>API Version</td>
-                        <td><?php echo $rowApiStatusShow; ?></td>
+                        <td><?php echo $rowFairApiVersion; ?></td>
                     </tr>
                     <tr>
-                        <td>Fair Rate (Per KM)</td>
+                        <td>Fare Rate (Per KM)</td>
                         <td><?php echo $rowFairRateShow; ?> Taka</td>
                     </tr>
                     <tr>
@@ -116,7 +116,7 @@
                     <tr>
                         <td>API Activity</td>
                         <td>
-                            <a href="admin/api-requests" style="text-decoration: none; color: #024457;">Details <i class="fa fa-external-link"></i></a>
+                            <a onclick="LoaderShow()" href="admin/api-requests" style="text-decoration: none; color: #024457;">Details <i class="fa fa-external-link"></i></a>
                         </td>
                     </tr>
                     </tbody>
