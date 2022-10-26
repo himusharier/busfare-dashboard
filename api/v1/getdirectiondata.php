@@ -51,7 +51,7 @@ if($rowApiStatusShow == "Active"){
             $getdirectiondata[] = [
                 "route-id" => "$row[directionRoute]",
                 "route-places" => json_decode($getplacesall),
-                "roue-distances" => json_decode($getroutesall)
+                "route-distances" => json_decode($getroutesall)
             ];
 
         }
