@@ -13,7 +13,7 @@
         border: 1px solid #dddddd;
         text-align: left;
         padding: 10px;
-        font-family: 'Bangla', arial, sans-serif !important;
+        font-family: 'CustomFont', arial, sans-serif !important;
         font-size: 16px !important;
         overflow-wrap: break-word;
         word-wrap: break-word;
@@ -35,7 +35,7 @@
             <tbody>
 
             <?php
-            $sqlp = "SELECT * FROM api_requests";
+            $sqlp = "SELECT * FROM api_requests ORDER BY id DESC";
             $resultp = mysqli_query($db, $sqlp);
             $countp = mysqli_num_rows($resultp);
             if ($countp > 0) {
@@ -44,8 +44,8 @@
                     <th>Serial No.</th>
                     <th>IP Address</th>
                     <th>Location</th>
-                    <th>Date</th>
-                    <th>Time</th>
+                    <th>Datetime</th>
+                    <th>Request Page</th>
                 </tr>
                 <?php
                 while ($rowp = mysqli_fetch_array($resultp, MYSQLI_ASSOC)) {
@@ -53,9 +53,9 @@
                     <tr>
                         <td><?php echo $rowp['id']; ?></td>
                         <td><?php echo $rowp['ipAddress']; ?></td>
-                        <td><?php echo $rowp['location']; ?></td>
-                        <td><?php echo $rowp['date']; ?></td>
-                        <td><?php echo $rowp['time']; ?></td>
+                        <td><?php echo $rowp['locationCity']; ?>, <?php echo $rowp['locationCountry']; ?></td>
+                        <td><?php echo $rowp['date']; ?>; <?php echo $rowp['time']; ?></td>
+                        <td><?php echo $rowp['requestPage']; ?></td>
                     </tr>
                     <?php
                 }

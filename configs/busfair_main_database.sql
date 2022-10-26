@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2022 at 10:58 PM
+-- Generation Time: Oct 27, 2022 at 12:54 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -324,9 +324,11 @@ INSERT INTO `all_routes` (`route_id`, `route_no`, `routeStartPlace`, `routeEndPl
 CREATE TABLE `api_requests` (
   `id` int(11) NOT NULL,
   `ipAddress` varchar(30) NOT NULL,
-  `location` varchar(100) NOT NULL,
+  `locationCity` varchar(100) NOT NULL,
+  `locationCountry` varchar(100) NOT NULL,
   `date` varchar(20) NOT NULL,
-  `time` varchar(20) NOT NULL
+  `time` varchar(20) NOT NULL,
+  `requestPage` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -348,9 +350,11 @@ CREATE TABLE `site_settings` (
 
 INSERT INTO `site_settings` (`id`, `settingsType`, `settingsTitle`, `settingsValue`) VALUES
 (1, 'site', 'siteName', 'BusFare'),
-(2, 'api', 'apiStatus', 'Inactive'),
+(2, 'api', 'apiStatus', 'Active'),
 (3, 'api', 'apiVersion', '0.1.1'),
-(4, 'api', 'fairRate', '2.45');
+(4, 'api', 'fairRate', '2.45'),
+(5, 'api', 'minimumFare', '10'),
+(6, 'api', 'lastInfoUpdate', '27-10-2022');
 
 -- --------------------------------------------------------
 
@@ -452,7 +456,7 @@ ALTER TABLE `api_requests`
 -- AUTO_INCREMENT for table `site_settings`
 --
 ALTER TABLE `site_settings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `user_admin`

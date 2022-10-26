@@ -22,6 +22,18 @@ $sql_ApiVersion = "SELECT * FROM site_settings WHERE (settingsTitle = 'apiVersio
 $resultApiVersion = mysqli_query($db, $sql_ApiVersion);
 $countApiVersion = mysqli_num_rows($resultApiVersion);
 $rowApiVersion = mysqli_fetch_assoc($resultApiVersion);
-$rowFairApiVersion = $rowApiVersion["settingsValue"];
+$rowApiVersionShow = $rowApiVersion["settingsValue"];
+
+$sql_MinimumFare = "SELECT * FROM site_settings WHERE (settingsTitle = 'minimumFare')";
+$resultMinimumFare = mysqli_query($db, $sql_MinimumFare);
+$countMinimumFare = mysqli_num_rows($resultMinimumFare);
+$rowMinimumFare = mysqli_fetch_assoc($resultMinimumFare);
+$rowMinimumFareShow = $rowMinimumFare["settingsValue"];
+
+$sql_LastInfoUpdate = "SELECT * FROM site_settings WHERE (settingsTitle = 'lastInfoUpdate')";
+$resultLastInfoUpdate = mysqli_query($db, $sql_LastInfoUpdate);
+$countLastInfoUpdate = mysqli_num_rows($resultLastInfoUpdate);
+$rowLastInfoUpdate = mysqli_fetch_assoc($resultLastInfoUpdate);
+$rowLastInfoUpdateShow = $rowLastInfoUpdate["settingsValue"];
 
 ?>

@@ -13,7 +13,7 @@
         border: 1px solid #dddddd;
         text-align: left;
         padding: 10px;
-        font-family: 'Bangla', arial, sans-serif !important;
+        font-family: 'CustomFont', arial, sans-serif !important;
         font-size: 16px !important;
         overflow-wrap: break-word;
         word-wrap: break-word;

@@ -28,7 +28,7 @@ if ($urlI != $urlC) {
 
         @font-face {
             font-family: 'CustomFont';
-            src: url('<?php echo $website_link; ?>/assets/fonts/Roboto.ttf') format('truetype');
+            src: url('<?php echo $website_link; ?>/assets/fonts/roboto.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }

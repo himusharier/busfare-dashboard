@@ -3,6 +3,7 @@ $canonical_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "htt
 
 $website_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 
+$website_link_original = $website_link;
 $website_link = "$website_link/busfair-dashboard";
 
 ?>

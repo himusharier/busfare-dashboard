@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# SSL certificate ---
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Disable Directory Browsing ---
+Options All -Indexes
+

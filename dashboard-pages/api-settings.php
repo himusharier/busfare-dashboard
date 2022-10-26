@@ -2,7 +2,7 @@
 
 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit-btn'])) {
 
-    $n = 3;
+    $n = 5;
     for($i=1;$i<=$n;$i++) {
         $updateSql = "UPDATE site_settings SET settingsValue='{$_POST['settingsValue'.$i]}' WHERE (settingsType ='api' AND id='{$_POST['settingsID'.$i]}')";
         if (mysqli_query($db, $updateSql)) {
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit-btn'])) {
                 <tr>
                     <td>API Version</td>
                     <td>
-                        <input type="text" name="settingsValue2" id="settingsValue2" value="<?php echo $rowFairApiVersion; ?>">
+                        <input type="text" name="settingsValue2" id="settingsValue2" value="<?php echo $rowApiVersionShow; ?>">
                         <input type="hidden" name="settingsID2" id="settingsID2" value="3">
                     </td>
                 </tr>
@@ -55,6 +55,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit-btn'])) {
                     <td>
                         <input type="text" name="settingsValue3" id="settingsValue3" value="<?php echo $rowFairRateShow; ?>">
                         <input type="hidden" name="settingsID3" id="settingsID3" value="4">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Minimum Fare</td>
+                    <td>
+                        <input type="text" name="settingsValue4" id="settingsValue4" value="<?php echo $rowMinimumFareShow; ?>">
+                        <input type="hidden" name="settingsID4" id="settingsID4" value="5">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Last Update Date</td>
+                    <td>
+                        <input type="text" name="settingsValue5" id="settingsValue5" value="<?php echo $rowLastInfoUpdateShow; ?>">
+                        <input type="hidden" name="settingsID5" id="settingsID5" value="6">
                     </td>
                 </tr>
                 </tbody>

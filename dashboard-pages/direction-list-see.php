@@ -13,7 +13,7 @@
         border: 1px solid #dddddd;
         text-align: left;
         padding: 10px;
-        font-family: 'Bangla', arial, sans-serif !important;
+        font-family: 'CustomFont', arial, sans-serif !important;
         font-size: 16px !important;
         overflow-wrap: break-word;
         word-wrap: break-word;
@@ -65,11 +65,11 @@
                 $data3 = $data3["route_no"];
                 return $data3;
             }
-                function banglaNumber($englishToBangla) {
-                    $englishNum=array("0","1","2","3","4","5",'6',"7","8","9","-","A");
-                    $banglaNum=array("০","১","২","৩","৪","৫",'৬',"৭","৮","৯","-","এ");
-                    return str_replace($englishNum,$banglaNum,$englishToBangla);
-                }
+            function banglaNumber($englishToBangla) {
+                $englishNum=array("0","1","2","3","4","5",'6',"7","8","9","-","A");
+                $banglaNum=array("০","১","২","৩","৪","৫",'৬',"৭","৮","৯","-","এ");
+                return str_replace($englishNum,$banglaNum,$englishToBangla);
+            }
             ?>
                 <tr>
                     <th>Route Details</th>

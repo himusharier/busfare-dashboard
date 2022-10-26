@@ -13,7 +13,7 @@
         border: 1px solid #dddddd;
         text-align: left;
         padding: 10px;
-        font-family: 'Bangla', arial, sans-serif !important;
+        font-family: 'CustomFont', arial, sans-serif !important;
         font-size: 16px !important;
         overflow-wrap: break-word;
         word-wrap: break-word;
@@ -94,20 +94,13 @@
                         if ($countpfd > 0) {
                             while ($rowpfd = mysqli_fetch_array($resultpfd, MYSQLI_ASSOC)) {
                                 ?>
-                                <a class="direction-after-sign"><?php echo place_name_bn($rowpfd['direction_place']); ?></a>
+                                <a style="font-family: BanglaFont;" class="direction-after-sign"><?php echo place_name_bn($rowpfd['direction_place']); ?></a>
                         <?php
                             }
                         } else {
                             echo "Full Route Direction Not Set Yet!";
                         }
                         ?>
-                        <!--
-                        <?php echo place_name_en($rowp['routeStartPlace']); ?>
-                        <i class="fa fa-long-arrow-right"></i>
-                        <?php echo place_name_en($rowp['routeEndPlace']); ?>
-                        <br/>
-                        <a class="banglaFont">(<?php echo place_name_bn($rowp['routeStartPlace']); ?> <i class="fa fa-long-arrow-right"></i> <?php echo place_name_bn($rowp['routeEndPlace']); ?>)</a>
-                        -->
                     </td>
                     <td class="printDisplayNone">
                         <form method="post" action="admin/update-route-list" style="display: inline-block;">

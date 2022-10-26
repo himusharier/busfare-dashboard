@@ -51,6 +51,16 @@ if (mysqli_num_rows($result) > 0) {
         return $data2;
     }
 
+    function get_route_name($data3)
+    {
+        include "configs/database-connection.php";
+        $data3 = "SELECT * FROM all_routes WHERE route_id = {$data3}";
+        $data3 = mysqli_query($db, $data3);
+        $data3 = mysqli_fetch_array($data3, MYSQLI_ASSOC);
+        $data3 = $data3["route_no"];
+        return $data3;
+    }
+
     while ($row = mysqli_fetch_assoc($result)) {
 
         ?>
@@ -82,7 +92,7 @@ if (mysqli_num_rows($result) > 0) {
                                     $rowrd = mysqli_fetch_array($resultrd, MYSQLI_ASSOC)
                                     ?>
                                     <select name="directionRoute" id="directionRoute">
-                                        <option value="<?php echo $row["directionRoute"]; ?>" selected hidden><?php echo $row["directionRoute"]; ?> (<?php echo place_name_en($rowrd["routeStartPlace"]); ?> - <?php echo place_name_en($rowrd["routeEndPlace"]); ?>)</option>
+                                        <option value="<?php echo $row["directionRoute"]; ?>" selected hidden><?php echo get_route_name($row["directionRoute"]); ?> (<?php echo place_name_en($rowrd["routeStartPlace"]); ?> - <?php echo place_name_en($rowrd["routeEndPlace"]); ?>)</option>
                                         <?php
                                         $sqlr = "SELECT * FROM all_routes";
                                         $resultr = mysqli_query($db, $sqlr);

@@ -95,23 +95,23 @@
                     </tr>
                     <tr>
                         <td>API Version</td>
-                        <td><?php echo $rowFairApiVersion; ?></td>
+                        <td><?php echo $rowApiVersionShow; ?></td>
                     </tr>
                     <tr>
                         <td>Fare Rate (Per KM)</td>
                         <td><?php echo $rowFairRateShow; ?> Taka</td>
                     </tr>
                     <tr>
+                        <td>Minimum Fare</td>
+                        <td><?php echo $rowMinimumFareShow; ?> Taka</td>
+                    </tr>
+                    <tr>
+                        <td>Last Update Date</td>
+                        <td><?php echo $rowLastInfoUpdateShow; ?></td>
+                    </tr>
+                    <tr>
                         <td>Total Requests</td>
                         <td><?php echo $countdre; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Last Request Time</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Last Request Location</td>
-                        <td></td>
                     </tr>
                     <tr>
                         <td>API Activity</td>
