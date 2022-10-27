@@ -47,16 +47,16 @@ if($rowApiStatusShow == "Active"){
             $routeNameBn = banglaNumber($row['route_no']);
 
             $getroutedata[] = [
-                "route-id" => "$row[route_id]",
-                "routename-en" => "$row[route_no]",
-                "routename-bn" => "$routeNameBn",
-                "route-start-place" => "$row[routeStartPlace]",
-                "route-end-place" => "$row[routeEndPlace]",
-                "route-total-distance" => "$row[routeDistance]"
+                "routeId" => "$row[route_id]",
+                "routeNameEn" => "$row[route_no]",
+                "routeNameBn" => "$routeNameBn",
+                "routeStartPlace" => "$row[routeStartPlace]",
+                "routeEndPlace" => "$row[routeEndPlace]",
+                "routeTotalDistance" => "$row[routeDistance]"
             ];
 
         }
-        echo json_encode(['status'=>$rowApiStatusShow,'routedata'=>$getroutedata]);
+        echo json_encode(['status'=>$rowApiStatusShow,'routeData'=>$getroutedata]);
 
     }else{
         echo json_encode(['status'=>$rowApiStatusShow,'message'=>'no data found!']);

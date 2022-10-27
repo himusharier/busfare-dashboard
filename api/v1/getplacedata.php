@@ -38,13 +38,13 @@ if($rowApiStatusShow == "Active"){
         while($row=mysqli_fetch_assoc($result)){
 
             $getplacedata[] = [
-                "place-id" => "$row[place_id]",
-                "placename-en" => "$row[placeNameEn]",
-                "placename-bn" => "$row[placeNameBn]"
+                "placeId" => "$row[place_id]",
+                "placeNameEn" => "$row[placeNameEn]",
+                "placeNameBn" => "$row[placeNameBn]"
             ];
 
         }
-        echo json_encode(['status'=>$rowApiStatusShow,'placedata'=>$getplacedata]);
+        echo json_encode(['status'=>$rowApiStatusShow,'placeData'=>$getplacedata]);
 
     }else{
         echo json_encode(['status'=>$rowApiStatusShow,'message'=>'no data found!']);

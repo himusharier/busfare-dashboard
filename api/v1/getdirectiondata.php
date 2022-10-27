@@ -49,19 +49,19 @@ if($rowApiStatusShow == "Active"){
             $getroutesall = json_encode($getroutes);
 
             $getdirectiondata[] = [
-                "route-id" => "$row[directionRoute]",
-                "route-places" => json_decode($getplacesall),
-                "route-distances" => json_decode($getroutesall)
+                "routeId" => "$row[directionRoute]",
+                "routePlaces" => json_decode($getplacesall),
+                "routeDistances" => json_decode($getroutesall)
             ];
 
         }
         echo json_encode([
             'status'=>$rowApiStatusShow,
-            'fare-rate'=>$rowFairRateShow,
-            'minimum-fare'=>$rowMinimumFareShow,
-            'api-version'=>$rowApiVersionShow,
-            'last-update'=>$rowLastInfoUpdateShow,
-            'directiondata'=>$getdirectiondata
+            'fareRate'=>$rowFairRateShow,
+            'minimumFare'=>$rowMinimumFareShow,
+            'apiVersion'=>$rowApiVersionShow,
+            'lastUpdate'=>$rowLastInfoUpdateShow,
+            'directionData'=>$getdirectiondata
         ]);
 
     }else{
