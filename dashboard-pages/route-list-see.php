@@ -88,7 +88,7 @@
                     </td>
                     <td>
                         <?php
-                        $sqlpfd = "SELECT * FROM all_directions WHERE direction_route = '{$rowp['route_id']}'";
+                        $sqlpfd = "SELECT * FROM all_directions WHERE direction_route = '{$rowp['route_id']}' ORDER BY direction_distance ASC";
                         $resultpfd = mysqli_query($db, $sqlpfd);
                         $countpfd = mysqli_num_rows($resultpfd);
                         if ($countpfd > 0) {

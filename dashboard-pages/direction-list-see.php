@@ -100,7 +100,7 @@
                             <tbody>
 
                             <?php
-                            $sqldp = "SELECT * FROM all_directions WHERE direction_route = '{$rowd['directionRoute']}'";
+                            $sqldp = "SELECT * FROM all_directions WHERE direction_route = '{$rowd['directionRoute']}' ORDER BY direction_distance ASC";
                             $resultdp = mysqli_query($db, $sqldp);
                             while ($rowdp = mysqli_fetch_array($resultdp, MYSQLI_ASSOC)) {
                             ?>

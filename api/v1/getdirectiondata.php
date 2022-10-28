@@ -37,7 +37,7 @@ if($rowApiStatusShow == "Active"){
     if($count > 0){
         while($row=mysqli_fetch_assoc($result)){
 
-            $sqlRouteDetails="SELECT * FROM all_directions WHERE direction_route='$row[directionRoute]'";
+            $sqlRouteDetails="SELECT * FROM all_directions WHERE direction_route='$row[directionRoute]' ORDER BY direction_distance ASC";
             $resultRouteDetails=mysqli_query($db,$sqlRouteDetails);
             $getplaces = [];
             $getroutes = [];
