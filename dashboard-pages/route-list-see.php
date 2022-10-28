@@ -35,7 +35,28 @@
             <tbody>
 
                 <?php
-                $sqlp = "SELECT * FROM all_routes";
+                $results_per_page = 20; // number of results per page
+
+                if (isset($_GET['page'])) {
+                    function clean_inputs($pageNo)
+                    {
+                        include "configs/database-connection.php";
+                        $pageNo = htmlspecialchars($pageNo);
+                        $pageNo = stripslashes($pageNo);
+                        $pageNo = trim($pageNo);
+                        $pageNo = mysqli_real_escape_string($db, $pageNo);
+                        return $pageNo;
+                    }
+
+                    $get_page = clean_inputs($_GET['page']);
+                } else {
+                    $get_page = null;
+                }
+
+                if (isset($get_page)) { $page = $get_page; } else { $page=1; };
+                $start_from = ($page-1) * $results_per_page;
+
+                $sqlp = "SELECT * FROM all_routes ORDER BY route_id ASC LIMIT {$start_from}, ".$results_per_page;
                 $resultp = mysqli_query($db, $sqlp);
                 $countp = mysqli_num_rows($resultp);
                 if ($countp > 0) {
@@ -122,6 +143,41 @@
         </table>
     </div>
 
+    <?php
+    if ($countp > 0) {
+    ?>
+    <div class="bottom-pagination">
+        <?php
+        $sqlpn = "SELECT COUNT(route_id) AS total FROM all_routes";
+        $resultpn = mysqli_query($db, $sqlpn);
+        $rowpn = mysqli_fetch_array($resultpn,MYSQLI_ASSOC);
+        $total_pages = ceil($rowpn["total"] / $results_per_page); // calculate total pages with results
+
+        //for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
+        $i=$page;
+        ?>
+        <div style="display: flex;justify-content: center;margin-right: 5px;margin-left: -10px;">
+            <select name="perPageLimit" style="padding: 0 5px;font-size: 14px;">
+                <option hidden>Per Page <?php echo $results_per_page ?> Entries</option>
+            </select>
+        </div>
+        <?php
+        }
+        ?>
+
+        <?php
+        for ($i=1; $i<=$total_pages; $i++) {
+
+            //echo "<option value='{$i}'>{$i}</option>";
+            echo "<a onClick='LoaderShow()' style='";
+            if ($page == $i) {
+                echo "background-color: #5b86e5; color: #ffffff;";
+            }
+            echo "' href='admin/see-route-list?page={$i}'>{$i}</a>";
+
+        };
+        ?>
+    </div>
 
 </div>
 
