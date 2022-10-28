@@ -1093,9 +1093,13 @@ legend {
 
 
 
-.direction-after-sign::after {
+.direction-after-sign:first-child:before {
     font-family: FontAwesome;
-    content: '\f178 ';
+    content: none;
+}
+.direction-after-sign::before {
+    font-family: FontAwesome;
+    content: '\f178';
 }
 
 

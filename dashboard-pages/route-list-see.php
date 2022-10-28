@@ -94,7 +94,7 @@
                         if ($countpfd > 0) {
                             while ($rowpfd = mysqli_fetch_array($resultpfd, MYSQLI_ASSOC)) {
                                 ?>
-                                <a style="font-family: BanglaFont;" class="direction-after-sign"><?php echo place_name_bn($rowpfd['direction_place']); ?></a>
+                                <a style="font-family: BanglaFont;" class="direction-after-sign"> <?php echo place_name_bn($rowpfd['direction_place']); ?></a>
                         <?php
                             }
                         } else {
