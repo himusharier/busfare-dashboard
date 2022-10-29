@@ -116,7 +116,7 @@ if (mysqli_num_rows($result) > 0) {
                             </tr>
 
                             <?php
-                            $sqlrdl = "SELECT * FROM all_directions WHERE direction_route = '{$row["directionRoute"]}'";
+                            $sqlrdl = "SELECT * FROM all_directions WHERE direction_route = '{$row["directionRoute"]}' ORDER BY direction_distance ASC";
                             $resultrdl = mysqli_query($db, $sqlrdl);
                             $countrdl = mysqli_num_rows($resultrdl);
                             if ($countrdl > 0) {
