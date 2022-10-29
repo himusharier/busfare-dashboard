@@ -76,7 +76,7 @@
                 "routeTotalDistance": "16.9"
             },
             {
-                "route-id": "3",
+                "routeId": "3",
                 "routeNameEn": "A-105",
                 "routeNameBn": "এ-১০৫",
                 "routeStartPlace": "23",
