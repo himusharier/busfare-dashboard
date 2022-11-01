@@ -20,7 +20,7 @@
                     <tbody>
                     <tr>
                         <td>
-                            <label>Route No:</label>
+                            <label>Route No<i style="color: red;">*</i></label>
                             <select name="routeNo" id="routeNo">
                                 <option value="" selected hidden>-- Select Route --</option>
                                 <?php
@@ -51,7 +51,7 @@
                             </select>
                         </td>
                         <td>
-                            <label>Place Name:</label>
+                            <label>Place Name<i style="color: red;">*</i></label>
                             <select name="placeName1" id="placeName1">
                                 <option value="" selected hidden>-- Select Place --</option>
                                 <?php
@@ -73,7 +73,7 @@
                             </select>
                         </td>
                         <td>
-                            <label>Place Distance (KM):</label>
+                            <label>Place Distance (KM)<i style="color: red;">*</i></label>
                             <input type="text" name="placeDistance1" id="placeDistance1" value="">
                         </td>
                         <td><a onclick="add_more()" class="add-btn2" style="display:inline-block;margin: 0;margin-top: 20px; border-radius: 4px;"><i class="fa fa-plus"></i> Add Another Place</a></td>
@@ -157,7 +157,7 @@
             '                        <td>' +
             '                        </td>' +
             '                        <td>' +
-            '                            <label>Place Name:</label>' +
+            '                            <label>Place Name</label>' +
             '                            <select name="placeName'+box_count+'" id="placeName'+box_count+'">' +
             '                            <option value="" selected hidden>-- Select Place --</option>' +
             '<?php
@@ -179,11 +179,11 @@
             ?>' +
             '                        </td>' +
             '                        <td>' +
-            '                            <label>Place Distance (KM):</label>' +
+            '                            <label>Place Distance (KM)</label>' +
             '                            <input type="text" name="placeDistance'+box_count+'" id="placeDistance'+box_count+'" value="">' +
             '                        </td>' +
             '                        <td>' +
-            '                            <a onclick="remove_more('+box_count+')" class="delete-btn2" style="display:inline-block;margin: 0;margin-top: 20px;border-radius: 4px;"><i class="fa fa-trash"></i> Remove</a>' +
+            '                            <a onclick="remove_more('+box_count+')" class="delete-btn2" style="display:inline-block;margin: 0;margin-top: 20px;border-radius: 4px;"><i class="fa fa-times"></i> Remove</a>' +
             '                        </td>' +
             '                    </tr>' +
             '                    </tbody>' +

@@ -14,7 +14,7 @@
 
         <div style="margin-top: 25px;">
             <div class="dashboard-element-body">
-                <div class="dashboard-card-1">
+                <div class="dashboard-card-2">
                     <h3>
                         Total Places:
                         <a href="admin/see-place-list" style="text-decoration: none; color: #024457;font-size: 18px;margin-bottom: 20px;display: inline-block;"><i class="fa fa-external-link"></i></a>
@@ -33,6 +33,23 @@
             <div class="dashboard-element-body">
                 <div class="dashboard-card-1">
                     <h3>
+                        Total Buses:
+                        <a href="admin/see-bus-list" style="text-decoration: none; color: #024457;font-size: 18px;margin-bottom: 20px;display: inline-block;"><i class="fa fa-external-link"></i></a>
+                    </h3>
+                    <?php
+                    $sqlb = "SELECT * FROM all_buses";
+                    $resultb = mysqli_query($db, $sqlb);
+                    $countb = mysqli_num_rows($resultb);
+                    if ($countb <= 0) {
+                        $countb = 0;
+                    }
+                    ?>
+                    <p style="font-size: 32px; font-family: CustomFont;"><?php echo $countb; ?></p>
+                </div>
+            </div>
+            <div class="dashboard-element-body">
+                <div class="dashboard-card-2">
+                    <h3>
                         Total Routes:
                         <a href="admin/see-route-list" style="text-decoration: none; color: #024457;font-size: 18px;margin-bottom: 20px;display: inline-block;"><i class="fa fa-external-link"></i></a>
                     </h3>
@@ -49,7 +66,7 @@
             </div>
 
             <div class="dashboard-element-body">
-                <div class="dashboard-card-2">
+                <div class="dashboard-card-1">
                     <h3>Total Directions:
                         <a href="admin/see-direction-list" style="text-decoration: none; color: #024457;font-size: 18px;margin-bottom: 20px;display: inline-block;"><i class="fa fa-external-link"></i></a>
                     </h3>

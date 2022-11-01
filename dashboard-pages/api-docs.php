@@ -52,6 +52,35 @@
     </div>
 
     <div class="api-doc-container-div">
+        <h3><u>Get all Bus data:</u></h3>
+        <br/>
+        <p>URL: <a class="link" href="<?php echo $website_link; ?>/api/v1/getbuses" target="_blank"><?php echo $website_link; ?>/api/v1/getbuses <i class="fa fa-external-link"></i></a></p>
+        <p style="white-space: pre;font-family: monospace;font-size: 12px;background-color: #F5F5F5;color: #000;padding: 5px;border-radius: 7px;overflow: auto;margin-top: 10px;">
+    {
+        "status": "Active",
+        "busData": [
+            {
+                "busId": "1",
+                "busNameEn": "Achim Paribahan",
+                "busNameBn": "অসীম পরিবহণ"
+            },
+            {
+                "busId": "2",
+                "busNameEn": "Agradut",
+                "busNameBn": "অগ্রদূত"
+            },
+            {
+                "busId": "3",
+                "busNameEn": "Airport Bangabandhu Avenue Transport",
+                "busNameBn": "এয়ারপোর্ট বঙ্গবন্ধু এভিনিউ ট্রান্সপোর্ট"
+            }
+        ]
+    }
+        </p>
+        <br/>
+    </div>
+
+    <div class="api-doc-container-div">
         <h3><u>Get all route data:</u></h3>
         <br/>
         <p>URL: <a class="link" href="<?php echo $website_link; ?>/api/v1/getroutes" target="_blank"><?php echo $website_link; ?>/api/v1/getroutes <i class="fa fa-external-link"></i></a></p>
@@ -66,6 +95,7 @@
                 "routeStartPlace": "1",
                 "routeEndPlace": "14",
                 "routeTotalDistance": "28.8"
+                "busId": ["1","2","3"]
             },
             {
                 "routeId": "2",
@@ -74,6 +104,7 @@
                 "routeStartPlace": "15",
                 "routeEndPlace": "22",
                 "routeTotalDistance": "16.9"
+                "busId": ["3","4","5"]
             },
             {
                 "routeId": "3",
@@ -82,6 +113,7 @@
                 "routeStartPlace": "23",
                 "routeEndPlace": "27",
                 "routeTotalDistance": "15.10"
+                "busId": ["5","6","7"]
             }
         ]
     }

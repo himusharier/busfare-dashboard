@@ -114,7 +114,7 @@ require ('dashboard-pages/page-sections/dashboard-header.php');
             $(".content-body-main-div").css("margin-left","0px");
         } else {
             sidebar.style.display = "block";
-            $(".content-body-main-div").css("margin-left","210px");
+            $(".content-body-main-div").css("margin-left","220px");
         }
     }
 </script>

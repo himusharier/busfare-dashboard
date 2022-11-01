@@ -9,5 +9,6 @@ Options All -Indexes
 
 # Script Pages ---
 RewriteRule ^getplaces$ getplacedata.php
+RewriteRule ^getbuses$ getbusdata.php
 RewriteRule ^getroutes$ getroutedata.php
 RewriteRule ^getdirections$ getdirectiondata.php

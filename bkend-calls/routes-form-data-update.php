@@ -30,6 +30,29 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['routeID']) && !isset($
     $routeEndPlace = clean_inputs($_POST['routeEndPlace']);
     $routeTotalDistance = clean_inputs($_POST['routeTotalDistance']);
 
+
+
+    $n = clean_inputs($_POST['box_count']);
+    for($i=1;$i<=$n;$i++) {
+        if (isset($_POST['xbusName'.$i])) {
+            $xbusNameId = clean_inputs($_POST['xbusName'.$i]);
+            $xbusNameBusId = clean_inputs($_POST['xbusNameBusId'.$i]);
+
+            $Sql_updateBus = "UPDATE all_routes_bus_list SET bus_no='$xbusNameId' WHERE (route_id='$routeID' AND id='$xbusNameBusId')";
+            mysqli_query($db, $Sql_updateBus);
+        } else {
+            if (!empty($_POST['busName'.$i])) {
+                $busNameId = clean_inputs($_POST['busName'.$i]);
+
+                $Sql_insertBus = "INSERT INTO all_routes_bus_list (route_id, bus_no) VALUES ('$routeID', '$busNameId')";
+                mysqli_query($db, $Sql_insertBus);
+            }
+        }
+
+    }
+
+
+
     $sql = "UPDATE all_routes SET route_no='$routeNo', routeStartPlace='$routeStartPlace', routeEndPlace='$routeEndPlace', routeDistance='$routeTotalDistance' WHERE (route_id='$routeID')";
 
         if (mysqli_query($db, $sql)) {

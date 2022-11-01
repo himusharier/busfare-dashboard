@@ -78,6 +78,15 @@
                         $data2 = $data2["placeNameBn"];
                         return $data2;
                     }
+                    function bus_name_bn($data3)
+                    {
+                        include "configs/database-connection.php";
+                        $data3 = "SELECT * FROM all_buses WHERE bus_id = {$data3}";
+                        $data3 = mysqli_query($db, $data3);
+                        $data3 = mysqli_fetch_array($data3, MYSQLI_ASSOC);
+                        $data3 = $data3["busNameBn"];
+                        return $data3;
+                    }
                     function banglaNumber($englishToBangla) {
                         $englishNum=array("0","1","2","3","4","5",'6',"7","8","9","-","A");
                         $banglaNum=array("০","১","২","৩","৪","৫",'৬',"৭","৮","৯","-","এ");
@@ -87,6 +96,7 @@
                 <tr>
                     <th>Route No.</th>
                     <th>Route Full Directions</th>
+                    <th>Available Bus List</th>
                     <th class="printDisplayNone">Option</th>
                 </tr>
                 <?php
@@ -119,7 +129,23 @@
                         <?php
                             }
                         } else {
-                            echo "Full Route Direction Not Set Yet!";
+                            echo "<a style='font-size: 14px; font-style: italic;'>Full Route Direction Not Set Yet!</a>";
+                        }
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                        $sqlpfdb = "SELECT * FROM all_routes_bus_list WHERE route_id = '{$rowp['route_id']}' ORDER BY id ASC";
+                        $resultpfdb = mysqli_query($db, $sqlpfdb);
+                        $countpfdb = mysqli_num_rows($resultpfdb);
+                        if ($countpfdb > 0) {
+                            while ($rowpfdb = mysqli_fetch_array($resultpfdb, MYSQLI_ASSOC)) {
+                                ?>
+                                <a style="font-family: BanglaFont;" class="busList-after-sign"> <?php echo bus_name_bn($rowpfdb['bus_no']); ?></a><br/>
+                                <?php
+                            }
+                        } else {
+                            echo "<a style='font-size: 14px; font-style: italic;'>No Bus Found!</a>";
                         }
                         ?>
                     </td>

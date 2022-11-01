@@ -29,14 +29,41 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $routeEndPlace = clean_inputs($_POST['routeEndPlace']);
     $routeTotalDistance = clean_inputs($_POST['routeTotalDistance']);
 
-    $sql_places = "INSERT INTO all_routes (route_no, routeStartPlace, routeEndPlace, routeDistance) VALUES ('{$routeNo}', '{$routeStartPlace}', '{$routeEndPlace}', '{$routeTotalDistance}')";
+    $sql_routes = "INSERT INTO all_routes (route_no, routeStartPlace, routeEndPlace, routeDistance) VALUES ('{$routeNo}', '{$routeStartPlace}', '{$routeEndPlace}', '{$routeTotalDistance}')";
 
-    if (mysqli_query($db, $sql_places)) {
+    if (mysqli_query($db, $sql_routes)) {
 
-        echo "<div class='reg-form-message-green'><br/><i class='fa fa-check'></i> <b>Place Added Successfully!</b><br/><br/><a href='admin/add-new-route' type='button' onclick='LoaderShow();' name='renew-btn' class='cancel-btn' style='display: inline-block;padding: 10px 20px; border-radius: 4px; margin: 30px 0;'><i class='fa fa-plus'></i> Add Another Place</a></div>";
+        $lastRouteId = mysqli_insert_id($db);
+
+        $n = clean_inputs($_POST['box_count']);
+        for ($i = 1; $i <= $n; $i++) {
+            if (!empty($_POST['busName'.$i])) {
+
+                $busName = clean_inputs($_POST['busName'.$i]);
+
+                $sql_buses = "INSERT INTO all_routes_bus_list (route_id, bus_no) VALUES ('{$lastRouteId}', '{$busName}')";
+
+                if (mysqli_query($db, $sql_buses)) {
+                    $sql_status = 'done';
+                } else {
+                    $sql_status = 'fail';
+                }
+
+            }
+        }
+
 
     } else {
-        echo "<div class='reg-form-message-error'><br/><i class='fa fa-close'></i> <b>Sorry, Place Can't Be Added!</b><br/><br/><button type='button' onclick='reTryForm();' name='renew-btn' class='cancel-btn'><i class='fa fa-refresh'></i> Try Again</button></div>";
+        $sql_status = 'fail';
+    }
+
+
+    if ($sql_status == 'done') {
+
+        echo "<div class='reg-form-message-green'><br/><i class='fa fa-check'></i> <b>Route Added Successfully!</b><br/><br/><a href='admin/add-new-route' type='button' onclick='LoaderShow();' name='renew-btn' class='cancel-btn' style='display: inline-block;padding: 10px 20px; border-radius: 4px; margin: 30px 0;'><i class='fa fa-plus'></i> Add Another Route</a></div>";
+
+    } else {
+        echo "<div class='reg-form-message-error'><br/><i class='fa fa-close'></i> <b>Sorry, Route Can't Be Added!</b><br/><br/><button type='button' onclick='reTryForm();' name='renew-btn' class='cancel-btn'><i class='fa fa-refresh'></i> Try Again</button></div>";
     }
 
 

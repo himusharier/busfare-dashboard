@@ -20,6 +20,9 @@ RewriteRule ^script/admin_login_script$ bkend-calls/admin-login-checkUser.php
 RewriteRule ^script/form-data-insert-places$ bkend-calls/places-form-data-insert.php
 RewriteRule ^script/form-data-update-places$ bkend-calls/places-form-data-update.php
 
+RewriteRule ^script/form-data-insert-buses$ bkend-calls/buses-form-data-insert.php
+RewriteRule ^script/form-data-update-buses$ bkend-calls/buses-form-data-update.php
+
 RewriteRule ^script/form-data-insert-routes$ bkend-calls/routes-form-data-insert.php
 RewriteRule ^script/form-data-update-routes$ bkend-calls/routes-form-data-update.php
 
@@ -34,6 +37,10 @@ RewriteRule ^admin/dashboard$ admin-dashboard.php?pageId=dashboard
 RewriteRule ^admin/see-place-list$ admin-dashboard.php?pageId=place-list-see [L,QSA]
 RewriteRule ^admin/add-new-place$ admin-dashboard.php?pageId=place-list-add
 RewriteRule ^admin/update-place-list$ admin-dashboard.php?pageId=place-list-update
+
+RewriteRule ^admin/see-bus-list$ admin-dashboard.php?pageId=bus-list-see [L,QSA]
+RewriteRule ^admin/add-new-bus$ admin-dashboard.php?pageId=bus-list-add
+RewriteRule ^admin/update-bus-list$ admin-dashboard.php?pageId=bus-list-update
 
 RewriteRule ^admin/see-route-list$ admin-dashboard.php?pageId=route-list-see [L,QSA]
 RewriteRule ^admin/add-new-route$ admin-dashboard.php?pageId=route-list-add

@@ -25,47 +25,26 @@ if($rowApiStatusShow == "Active"){
     date_default_timezone_set('Asia/Dhaka');
     $reqDate = date('d-m-Y');
     $reqTime = date('g:i:s A');
-    $reqPage = "/getroutes";
+    $reqPage = "/getbuses";
     $sql_apiActivity = "INSERT INTO api_requests (ipAddress, locationCity, locationCountry, date, time, requestPage) VALUES ('{$reqIP}', '{$reqLocationCity}', '{$reqLocationCountry}', '{$reqDate}', '{$reqTime}', '{$reqPage}')";
     mysqli_query($db, $sql_apiActivity);
 
 
-    $sql="SELECT * FROM all_routes";
+    $sql="SELECT * FROM all_buses";
     $result=mysqli_query($db,$sql);
     $count=mysqli_num_rows($result);
 
     if($count > 0){
-
-        function banglaNumber($englishToBangla) {
-            $englishNum=array("0","1","2","3","4","5",'6',"7","8","9","-","A");
-            $banglaNum=array("০","১","২","৩","৪","৫",'৬',"৭","৮","৯","-","এ");
-            return str_replace($englishNum,$banglaNum,$englishToBangla);
-        }
-
         while($row=mysqli_fetch_assoc($result)){
 
-            $sqlBusDetails="SELECT * FROM all_routes_bus_list WHERE route_id='$row[route_id]' ORDER BY id ASC";
-            $resultBusDetails=mysqli_query($db,$sqlBusDetails);
-            $getBuses = [];
-            while($rowBusDetails=mysqli_fetch_assoc($resultBusDetails)){
-                $getBuses[] = $rowBusDetails['bus_no'];
-            }
-            $getBusesAll = json_encode($getBuses);
-
-            $routeNameBn = banglaNumber($row['route_no']);
-
-            $getroutedata[] = [
-                "routeId" => "$row[route_id]",
-                "routeNameEn" => "$row[route_no]",
-                "routeNameBn" => "$routeNameBn",
-                "routeStartPlace" => "$row[routeStartPlace]",
-                "routeEndPlace" => "$row[routeEndPlace]",
-                "routeTotalDistance" => "$row[routeDistance]",
-                "busId" => json_decode($getBusesAll)
+            $getplacedata[] = [
+                "busId" => "$row[bus_id]",
+                "busNameEn" => "$row[busNameEn]",
+                "busNameBn" => "$row[busNameBn]"
             ];
 
         }
-        echo json_encode(['status'=>$rowApiStatusShow,'routeData'=>$getroutedata]);
+        echo json_encode(['status'=>$rowApiStatusShow,'busData'=>$getplacedata]);
 
     }else{
         echo json_encode(['status'=>$rowApiStatusShow,'message'=>'no data found!']);

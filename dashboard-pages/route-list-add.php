@@ -14,13 +14,13 @@
 
         <div class="dashboard-table-container" style="margin-bottom: 0px;">
             <p class="dashboard-table-container-heading"><i class="fa fa-road"></i> Add New Route</p>
-            <div class="dashboard-table-container-div">
+            <div class="dashboard-table-container-div" id="form-wrap">
 
                 <table>
                     <tbody>
                     <tr>
                         <td>
-                            <label>Route No:</label>
+                            <label>Route No</label>
                             <input type="text" list="routeNoList" name="routeNo" id="routeNo" value="">
                             <datalist id="routeNoList">
                                 <?php
@@ -36,7 +36,7 @@
                             </datalist>
                         </td>
                         <td>
-                            <label>Route Start Place:</label>
+                            <label>Route Start Place<i style="color: red;">*</i></label>
                             <select name="routeStartPlace" id="routeStartPlace">
                                 <option value="" selected hidden>-- Select Place --</option>
                                 <?php
@@ -58,7 +58,7 @@
                             </select>
                         </td>
                         <td>
-                            <label>Route End Place:</label>
+                            <label>Route End Place<i style="color: red;">*</i></label>
                             <select name="routeEndPlace" id="routeEndPlace">
                                 <option value="" selected hidden>-- Select Place --</option>
                                 <?php
@@ -80,9 +80,34 @@
                             </select>
                         </td>
                         <td>
-                            <label>Route Total Distance (KM):</label>
+                            <label>Route Total Distance (KM)</label>
                             <input type="text" name="routeTotalDistance" id="routeTotalDistance" value="">
                         </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Bus Name</label>
+                            <select name="busName1" id="busName1">
+                                <option value="" selected hidden>-- Select Bus --</option>
+                                <?php
+                                $sqlb = "SELECT * FROM all_buses";
+                                $resultb = mysqli_query($db, $sqlb);
+                                $countb = mysqli_num_rows($resultb);
+                                if ($countb > 0) {
+                                    while ($rowb = mysqli_fetch_array($resultb, MYSQLI_ASSOC)) {
+                                        ?>
+                                        <option value="<?php echo $rowb['bus_id']; ?>"><?php echo $rowb['busNameEn']; ?> <?php if(!empty($rowb['busNameBn'])){ echo "({$rowb['busNameBn']})";} ?></option>
+                                        <?php
+                                    }
+                                    ?>
+                                    <?php
+                                } else {
+                                    echo "<option value=''><i>No Bus Found!</i></option>";
+                                }
+                                ?>
+                            </select>
+                        </td>
+                        <td><a onclick="add_more()" class="add-btn2" style="display:inline-block;margin: 0;margin-top: 20px; border-radius: 4px;"><i class="fa fa-plus"></i> Add Another Bus</a></td>
                     </tr>
                     </tbody>
                 </table>
@@ -90,6 +115,7 @@
             </div>
         </div>
 
+        <input type="hidden" id="box_count" name="box_count" value="1">
         <button type="button" name="submit-btn" id="submit-btn"><i class="fa fa-save"></i> Save Route</button>
         <img style="display: none" src="assets/images/loader.gif" width="30" />
     </form>
@@ -103,12 +129,10 @@
     $(document).ready(function () {
         $("#submit-btn").click(function () {
 
-            var routeNo = $("#routeNo").val().trim();
             var routeStartPlace = $("#routeStartPlace").val().trim();
             var routeEndPlace = $("#routeEndPlace").val().trim();
-            var routeTotalDistance = $("#routeTotalDistance").val().trim();
 
-            if(routeNo == "" || routeStartPlace == "" || routeEndPlace == "" || routeTotalDistance == "") {
+            if(routeStartPlace == "" || routeEndPlace == "") {
 
                 alert("Fill The Form Correctly!");
 
@@ -147,6 +171,56 @@
     function reTryForm () {
         $('#route-form-data').show();
         $('#response').hide();
+    }
+</script>
+
+
+<script>
+    function add_more(){
+        var box_count=jQuery("#box_count").val();
+        box_count++;
+        jQuery("#box_count").val(box_count);
+        jQuery("#form-wrap").append('<table id="box_loop_'+box_count+'">' +
+            '                    <tbody>' +
+            '                    <tr>' +
+            '                        <td>' +
+            '                            <label>Bus Name</label>' +
+            '                            <select name="busName'+box_count+'" id="busName'+box_count+'">' +
+            '                            <option value="" selected hidden>-- Select Bus --</option>' +
+            '<?php
+                require ('configs/database-connection.php');
+                $sqlb = "SELECT * FROM all_buses";
+                $resultb = mysqli_query($db, $sqlb);
+                $countb = mysqli_num_rows($resultb);
+                if ($countb > 0) {
+                while ($rowb = mysqli_fetch_array($resultb, MYSQLI_ASSOC)) {
+                ?>' +
+            '<option value="<?php echo $rowb['bus_id']; ?>"><?php echo $rowb['busNameEn']; ?> <?php if(!empty($rowb['busNameBn'])){ echo "({$rowb['busNameBn']})";} ?></option>' +
+            '<?php
+                }
+                ?>' +
+            '<?php
+                } else {
+                echo '<option value=""><i>No Bus Found!</i></option>';
+            }
+                ?>' +
+            '                        </td>' +
+            '                        <td>' +
+            '                            <a onclick="remove_more('+box_count+')" class="delete-btn2" style="display:inline-block;margin: 0;margin-top: 20px;border-radius: 4px;"><i class="fa fa-times"></i> Remove</a>' +
+            '                        </td>' +
+            '                        <td>' +
+            '                        </td>' +
+            '                        <td>' +
+            '                        </td>' +
+            '                    </tr>' +
+            '                    </tbody>' +
+            '                </table>');
+    }
+    function remove_more(box_count){
+        jQuery("#box_loop_"+box_count).remove();
+        var box_count=jQuery("#box_count").val();
+        box_count--;
+        jQuery("#box_count").val(box_count);
     }
 </script>
 

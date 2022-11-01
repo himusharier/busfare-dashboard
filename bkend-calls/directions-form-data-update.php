@@ -28,20 +28,34 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['directionID']) && !iss
 
     $n = clean_inputs($_POST['box_count']);
     for($i=1;$i<=$n;$i++) {
-        if (isset($_POST['placeName'.$i]) && isset($_POST['placeDistance'.$i]) && isset($_POST['directionFieldId'.$i])) {
+        if (isset($_POST['placeName'.$i])) {
 
             $directionFieldID = clean_inputs($_POST['directionFieldId'.$i]);
             $placeName = clean_inputs($_POST['placeName'.$i]);
             $placeDistance = clean_inputs($_POST['placeDistance'.$i]);
 
-            $pr1Sql = "UPDATE all_directions SET direction_place='$placeName', direction_distance='$placeDistance' WHERE (direction_route='$directionID' AND direction_id='$directionFieldID')";
+            $sql_directionInsert = "UPDATE all_directions SET direction_place='$placeName', direction_distance='$placeDistance' WHERE (direction_route='$directionID' AND direction_id='$directionFieldID')";
 
-            if (mysqli_query($db, $pr1Sql)) {
+            if (mysqli_query($db, $sql_directionInsert)) {
                 $sql_status = 'done';
             } else {
                 $sql_status = 'fail';
             }
 
+        } else {
+            if (!empty($_POST['newPlaceName'.$i])) {
+
+                $newPlaceName = clean_inputs($_POST['newPlaceName'.$i]);
+                $newPlaceDistance = clean_inputs($_POST['newPlaceDistance'.$i]);
+
+                $sql_directionUpdate = "INSERT INTO all_directions (direction_route, direction_place, direction_distance) VALUES ('{$directionID}', '{$newPlaceName}', '{$newPlaceDistance}')";
+
+                if (mysqli_query($db, $sql_directionUpdate)) {
+                    $sql_status = 'done';
+                } else {
+                    $sql_status = 'fail';
+                }
+            }
         }
 
     }

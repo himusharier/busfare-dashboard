@@ -85,7 +85,7 @@ if (mysqli_num_rows($result) > 0) {
                             <tbody>
                             <tr>
                                 <td>
-                                    <label>Route No:</label>
+                                    <label>Route No<i style="color: red;">*</i></label>
                                     <?php
                                     $sqlrd = "SELECT * FROM all_routes WHERE route_id = '{$row['directionRoute']}'";
                                     $resultrd = mysqli_query($db, $sqlrd);
@@ -169,6 +169,12 @@ if (mysqli_num_rows($result) > 0) {
                                 echo "<p style='font-size: 16px;font-family: CustomFont;text-align: center;padding: 50px 0;font-style: italic;color: #ff3333;'><i class='fa fa-warning'></i> No Data Found!</p>";
                             }
                             ?>
+
+
+                            <table id="form-wrap"></table>
+                            <tr>
+                                <td><a onclick="add_more()" class="add-btn2" style="display:inline-block;margin: 0;margin-top: 20px; border-radius: 4px;"><i class="fa fa-plus"></i> Add Another Place</a></td>
+                            </tr>
 
                             </tbody>
                         </table>
@@ -257,5 +263,55 @@ if (mysqli_num_rows($result) > 0) {
         $('#response').hide();
     }
 
+</script>
+
+
+<script>
+    function add_more(){
+        var box_count=jQuery("#box_count").val();
+        box_count++;
+        jQuery("#box_count").val(box_count);
+        jQuery("#form-wrap").append('<table id="box_loop_'+box_count+'">' +
+            '                    <tbody>' +
+            '                    <tr>' +
+            '                        <td>' +
+            '                            <label>Place Name<i style="color: red;">*</i></label>' +
+            '                            <select name="newPlaceName'+box_count+'" id="newPlaceName'+box_count+'">' +
+            '                            <option value="" selected hidden>-- Select Place --</option>' +
+            '<?php
+                require ('configs/database-connection.php');
+                $sqlp = "SELECT * FROM all_places";
+                $resultp = mysqli_query($db, $sqlp);
+                $countp = mysqli_num_rows($resultp);
+                if ($countp > 0) {
+                while ($rowp = mysqli_fetch_array($resultp, MYSQLI_ASSOC)) {
+                ?>' +
+            '<option value="<?php echo $rowp['place_id']; ?>"><?php echo $rowp['placeNameEn']; ?> (<?php echo $rowp['placeNameBn']; ?>)</option>' +
+            '<?php
+                }
+                ?>' +
+            '<?php
+                } else {
+                echo '<option value=""><i>No Place Found!</i></option>';
+            }
+                ?>' +
+            '                        </td>' +
+            '                        <td>' +
+            '                            <label>Place Distance (KM)<i style="color: red;">*</i></label>' +
+            '                            <input type="text" name="newPlaceDistance'+box_count+'" id="newPlaceDistance'+box_count+'" value="">' +
+            '                        </td>' +
+            '                        <td>' +
+            '                            <a onclick="remove_more('+box_count+')" class="delete-btn2" style="display:inline-block;margin: 0;margin-top: 20px;border-radius: 4px;"><i class="fa fa-times"></i> Remove</a>' +
+            '                        </td>' +
+            '                    </tr>' +
+            '                    </tbody>' +
+            '                </table>');
+    }
+    function remove_more(box_count){
+        jQuery("#box_loop_"+box_count).remove();
+        var box_count=jQuery("#box_count").val();
+        box_count--;
+        jQuery("#box_count").val(box_count);
+    }
 </script>
 

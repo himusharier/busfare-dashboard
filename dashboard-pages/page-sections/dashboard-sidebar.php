@@ -10,6 +10,13 @@
             </div>
         </div>
         <div class="item">
+            <a class="sub-btn"><i class="fa fa-bus"></i> Buses <i class="fa fa-angle-down"></i></a>
+            <div class="sub-menu">
+                <a id="<?php if($_GET['pageId']=='bus-list-see') {echo 'page-active';}?><?php if($_GET['pageId']=='bus-list-update') {echo 'page-active';}?>" onclick="LoaderShow()" class="sub-item" href="admin/see-bus-list"><i class="fa fa-list"></i> See Bus List</a>
+                <a id="<?php if($_GET['pageId']=='bus-list-add') {echo 'page-active';}?>" class="sub-item" onClick="LoaderShow()" href="admin/add-new-bus"><i class="fa fa-plus"></i> Add New Bus</a>
+            </div>
+        </div>
+        <div class="item">
             <a class="sub-btn"><i class="fa fa-road"></i> Routes <i class="fa fa-angle-down"></i></a>
             <div class="sub-menu">
                 <a id="<?php if($_GET['pageId']=='route-list-see') {echo 'page-active';}?><?php if($_GET['pageId']=='route-list-update') {echo 'page-active';}?>" onclick="LoaderShow()" class="sub-item" id="list-trade-licence" href="admin/see-route-list"><i class="fa fa-list"></i> See Route List</a>
