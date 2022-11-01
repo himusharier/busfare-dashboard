@@ -78,14 +78,23 @@
                         $data2 = $data2["placeNameBn"];
                         return $data2;
                     }
-                    function bus_name_bn($data3)
+                    function bus_name_en($data3)
                     {
                         include "configs/database-connection.php";
                         $data3 = "SELECT * FROM all_buses WHERE bus_id = {$data3}";
                         $data3 = mysqli_query($db, $data3);
                         $data3 = mysqli_fetch_array($data3, MYSQLI_ASSOC);
-                        $data3 = $data3["busNameBn"];
+                        $data3 = $data3["busNameEn"];
                         return $data3;
+                    }
+                    function bus_name_bn($data4)
+                    {
+                        include "configs/database-connection.php";
+                        $data4 = "SELECT * FROM all_buses WHERE bus_id = {$data4}";
+                        $data4 = mysqli_query($db, $data4);
+                        $data4 = mysqli_fetch_array($data4, MYSQLI_ASSOC);
+                        $data4 = $data4["busNameBn"];
+                        return $data4;
                     }
                     function banglaNumber($englishToBangla) {
                         $englishNum=array("0","1","2","3","4","5",'6',"7","8","9","-","A");
@@ -141,7 +150,7 @@
                         if ($countpfdb > 0) {
                             while ($rowpfdb = mysqli_fetch_array($resultpfdb, MYSQLI_ASSOC)) {
                                 ?>
-                                <a style="font-family: BanglaFont;" class="busList-after-sign"> <?php echo bus_name_bn($rowpfdb['bus_no']); ?></a><br/>
+                                <a style="font-family: CustomFont;" class="busList-after-sign"> <?php echo bus_name_en($rowpfdb['bus_no']); ?></a><br/>
                                 <?php
                             }
                         } else {
