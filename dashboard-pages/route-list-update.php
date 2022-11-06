@@ -113,7 +113,7 @@ if (mysqli_num_rows($result) == 1) {
                                         if ($countp > 0) {
                                             while ($rowp = mysqli_fetch_array($resultp, MYSQLI_ASSOC)) {
                                                 ?>
-                                                <option value="<?php echo $rowp['place_id']; ?>"><?php echo $rowp['placeNameEn']; ?> (<?php echo $rowp['placeNameBn']; ?>)</option>
+                                                <option value="<?php echo $rowp['place_id']; ?>"><?php echo $rowp['placeNameEn']; ?> <?php if(!empty($rowp['placeNameBn'])){ echo "({$rowp['placeNameBn']})";} ?></option>
                                                 <?php
                                             }
                                             ?>
@@ -138,7 +138,7 @@ if (mysqli_num_rows($result) == 1) {
                                         if ($countp > 0) {
                                             while ($rowp = mysqli_fetch_array($resultp, MYSQLI_ASSOC)) {
                                                 ?>
-                                                <option value="<?php echo $rowp['place_id']; ?>"><?php echo $rowp['placeNameEn']; ?> (<?php echo $rowp['placeNameBn']; ?>)</option>
+                                                <option value="<?php echo $rowp['place_id']; ?>"><?php echo $rowp['placeNameEn']; ?> <?php if(!empty($rowp['placeNameBn'])){ echo "({$rowp['placeNameBn']})";} ?></option>
                                                 <?php
                                             }
                                             ?>
