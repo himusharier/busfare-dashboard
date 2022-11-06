@@ -113,7 +113,13 @@
                 ?>
                 <tr>
                     <td>
-                        <a style="font-size: 22px;font-weight: bold;"><?php echo $rowp['route_no']; ?></a> <a style="font-family: BanglaFont;">(<?php echo banglaNumber($rowp['route_no']); ?>)</a>
+                        <?php if(!empty($rowp['route_no']))
+                        {
+                        ?>
+                            <a style="font-size: 22px;font-weight: bold;"><?php echo $rowp['route_no']; ?></a> <a style="font-family: BanglaFont;">(<?php echo banglaNumber($rowp['route_no']); ?>)</a>
+                        <?php
+                        }
+                        ?>
                         <br/><br/>
                         <?php echo place_name_en($rowp['routeStartPlace']); ?>
                         <i class="fa fa-long-arrow-right"></i>
@@ -134,7 +140,7 @@
                         if ($countpfd > 0) {
                             while ($rowpfd = mysqli_fetch_array($resultpfd, MYSQLI_ASSOC)) {
                                 ?>
-                                <a style="font-family: BanglaFont;" class="direction-after-sign"> <?php echo place_name_bn($rowpfd['direction_place']); ?></a>
+                                <a style="font-family: CustomFont;" class="direction-after-sign"> <?php echo place_name_en($rowpfd['direction_place']); ?></a>
                         <?php
                             }
                         } else {
