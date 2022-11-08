@@ -36,12 +36,6 @@
       <change beforePath="$PROJECT_DIR$/../bimtransfer-project/sources/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/sources/account.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bimtransfer-project/sources/account/verification.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/sources/account/verification.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bimtransfer-project/sources/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/sources/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/busfair-dashboard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/busfair-dashboard.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-pages/direction-list-add.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-pages/direction-list-add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-pages/direction-list-update.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-pages/direction-list-update.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +46,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../bimtransfer-project" />
   </component>
   <component name="ProjectId" id="2H8qrs0E7itsrozSut2LMoicIHx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -83,7 +77,7 @@
       <workItem from="1667677265670" duration="536000" />
       <workItem from="1667770707408" duration="1278000" />
       <workItem from="1667829490405" duration="11390000" />
-      <workItem from="1667880336092" duration="431000" />
+      <workItem from="1667880336092" duration="772000" />
     </task>
     <servers />
   </component>

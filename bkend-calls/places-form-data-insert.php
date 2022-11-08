@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $n = clean_inputs($_POST['box_count']);
     for ($i = 1; $i <= $n; $i++) {
-        if (!empty($_POST['placeNameEn'.$i]) && !empty($_POST['placeNameBn'.$i])) {
+        if (!empty($_POST['placeNameEn'.$i])) {
 
             $placeNameEn = clean_inputs($_POST['placeNameEn'.$i]);
             $placeNameBn = clean_inputs($_POST['placeNameBn'.$i]);
