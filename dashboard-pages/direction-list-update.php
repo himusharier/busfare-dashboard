@@ -286,7 +286,7 @@ if (mysqli_num_rows($result) > 0) {
                 if ($countp > 0) {
                 while ($rowp = mysqli_fetch_array($resultp, MYSQLI_ASSOC)) {
                 ?>' +
-            '<option value="<?php echo $rowp['place_id']; ?>"><?php echo $rowp['placeNameEn']; ?> (<?php echo $rowp['placeNameBn']; ?>)</option>' +
+            '<option value="<?php echo $rowp['place_id']; ?>"><?php echo $rowp['placeNameEn']; ?> <?php if(!empty($rowp['placeNameBn'])){ echo "({$rowp['placeNameBn']})";} ?></option>' +
             '<?php
                 }
                 ?>' +
@@ -297,7 +297,7 @@ if (mysqli_num_rows($result) > 0) {
                 ?>' +
             '                        </td>' +
             '                        <td>' +
-            '                            <label>Place Distance (KM)<i style="color: red;">*</i></label>' +
+            '                            <label>Place Distance (KM)</label>' +
             '                            <input type="text" name="newPlaceDistance'+box_count+'" id="newPlaceDistance'+box_count+'" value="">' +
             '                        </td>' +
             '                        <td>' +

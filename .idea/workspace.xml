@@ -19,7 +19,30 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f430b777-5c4b-48f5-b14b-2eaf0b9fc331" name="Default Changelist" comment="" />
+    <list default="true" id="f430b777-5c4b-48f5-b14b-2eaf0b9fc331" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../bimtransfer-project/b013f84f25ac1cea96b631d42fdcc92b/user_16/Order-Webhosting.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bimtransfer-project/b013f84f25ac1cea96b631d42fdcc92b/user_17/-3-Full-Documentary-Dark-Web-YouTube.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bimtransfer-project/bimtransfer-com (untouched).zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bimtransfer-project/sources/account/receipt_upload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/bimtrans_01.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/bimtrans_01.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/includes/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/includes/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/languages/Bangla.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/languages/Bangla.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/languages/English.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/languages/English.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/requests/bit_confirm_transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/requests/bit_confirm_transaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/requests/bit_exchange_step_3.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/requests/bit_exchange_step_3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/requests/bit_make_exchange.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/requests/bit_make_exchange.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/sources/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/sources/account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/sources/account/verification.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/sources/account/verification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/sources/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/sources/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/busfair-dashboard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/busfair-dashboard.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-pages/direction-list-add.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-pages/direction-list-add.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-pages/direction-list-update.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-pages/direction-list-update.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,11 +55,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2H8qrs0E7itsrozSut2LMoicIHx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -55,6 +82,8 @@
       <updated>1667677260349</updated>
       <workItem from="1667677265670" duration="536000" />
       <workItem from="1667770707408" duration="1278000" />
+      <workItem from="1667829490405" duration="11390000" />
+      <workItem from="1667880336092" duration="431000" />
     </task>
     <servers />
   </component>
@@ -73,7 +102,14 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="1503" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1667830009826">
+      <screen x="1366" y="0" width="1366" height="738" />
+    </state>
+    <state x="1503" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738/1366.0.1366.738@1366.0.1366.738" timestamp="1667830009826" />
     <state x="1550" y="14" key="SettingsEditor" timestamp="1667677796991">
       <screen x="1366" y="0" width="1366" height="738" />
     </state>

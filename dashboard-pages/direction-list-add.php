@@ -73,7 +73,7 @@
                             </select>
                         </td>
                         <td>
-                            <label>Place Distance (KM)<i style="color: red;">*</i></label>
+                            <label>Place Distance (KM)</label>
                             <input type="text" name="placeDistance1" id="placeDistance1" value="">
                         </td>
                         <td><a onclick="add_more()" class="add-btn2" style="display:inline-block;margin: 0;margin-top: 20px; border-radius: 4px;"><i class="fa fa-plus"></i> Add Another Place</a></td>
@@ -101,9 +101,8 @@
 
             var routeNo = $("#routeNo").val().trim();
             var placeName1 = $("#placeName1").val().trim();
-            var placeDistance1 = $("#placeDistance1").val().trim();
 
-            if(routeNo == "" || placeName1 == "" || placeDistance1 == "") {
+            if(routeNo == "" || placeName1 == "") {
 
                 alert("Fill The Form Correctly!");
 
