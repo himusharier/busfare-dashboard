@@ -104,10 +104,10 @@ if (mysqli_num_rows($result) == 1) {
                                     <select name="routeStartPlace" id="routeStartPlace">
                                         <option value="<?php echo $row["routeStartPlace"]; ?>" selected hidden>
                                             <?php echo place_name_en($row["routeStartPlace"]); ?>
-                                            (<?php echo place_name_bn($row["routeStartPlace"]); ?>)
+                                            <!--(<?php echo place_name_bn($row["routeStartPlace"]); ?>)-->
                                         </option>
                                         <?php
-                                        $sqlp = "SELECT * FROM all_places";
+                                        $sqlp = "SELECT * FROM all_places ORDER BY placeNameEn ASC";
                                         $resultp = mysqli_query($db, $sqlp);
                                         $countp = mysqli_num_rows($resultp);
                                         if ($countp > 0) {
@@ -129,10 +129,10 @@ if (mysqli_num_rows($result) == 1) {
                                     <select name="routeEndPlace" id="routeEndPlace">
                                         <option value="<?php echo $row["routeEndPlace"]; ?>" selected hidden>
                                             <?php echo place_name_en($row["routeEndPlace"]); ?>
-                                            (<?php echo place_name_bn($row["routeEndPlace"]); ?>)
+                                            <!--(<?php echo place_name_bn($row["routeEndPlace"]); ?>)-->
                                         </option>
                                         <?php
-                                        $sqlp = "SELECT * FROM all_places";
+                                        $sqlp = "SELECT * FROM all_places ORDER BY placeNameEn ASC";
                                         $resultp = mysqli_query($db, $sqlp);
                                         $countp = mysqli_num_rows($resultp);
                                         if ($countp > 0) {
@@ -169,16 +169,20 @@ if (mysqli_num_rows($result) == 1) {
                                             <label>Bus Name</label>
                                             <input type="hidden" name="xbusNameBusId<?php echo $i; ?>" value="<?php echo $rowrdlb['id']; ?>">
                                             <select name="xbusName<?php echo $i; ?>" id="xbusName<?php echo $i; ?>">
-                                                <option value="<?php echo $rowrdlb["bus_no"] ?>" selected hidden><?php echo bus_name_en($rowrdlb["bus_no"]) ?> (<?php echo bus_name_bn($rowrdlb["bus_no"]) ?>)</option>
+                                                <option value="<?php echo $rowrdlb["bus_no"] ?>" selected hidden><?php echo bus_name_en($rowrdlb["bus_no"]) ?>
+                                                    <!--(<?php echo bus_name_bn($rowrdlb["bus_no"]) ?>)-->
+                                                </option>
                                                 <?php
                                                 require ('configs/database-connection.php');
-                                                $sqlpb = "SELECT * FROM all_buses";
+                                                $sqlpb = "SELECT * FROM all_buses ORDER BY busNameEn ASC";
                                                 $resultpb = mysqli_query($db, $sqlpb);
                                                 $countpb = mysqli_num_rows($resultpb);
                                                 if ($countpb > 0) {
                                                     while ($rowpb = mysqli_fetch_array($resultpb, MYSQLI_ASSOC)) {
                                                         ?>
-                                                        <option value="<?php echo $rowpb['bus_id']; ?>"><?php echo $rowpb['busNameEn']; ?> (<?php echo $rowpb['busNameBn']; ?>)</option>
+                                                        <option value="<?php echo $rowpb['bus_id']; ?>"><?php echo $rowpb['busNameEn']; ?>
+                                                            <!--(<?php echo $rowpb['busNameBn']; ?>)-->
+                                                        </option>
                                                         <?php
                                                     }
                                                     ?>
@@ -314,7 +318,7 @@ if (mysqli_num_rows($result) == 1) {
             '                            <option value="" selected hidden>-- Select Bus --</option>' +
             '<?php
                 require ('configs/database-connection.php');
-                $sqlb = "SELECT * FROM all_buses";
+                $sqlb = "SELECT * FROM all_buses ORDER BY busNameEn ASC";
                 $resultb = mysqli_query($db, $sqlb);
                 $countb = mysqli_num_rows($resultb);
                 if ($countb > 0) {

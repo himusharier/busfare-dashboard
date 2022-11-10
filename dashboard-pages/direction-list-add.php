@@ -55,7 +55,7 @@
                             <select name="placeName1" id="placeName1">
                                 <option value="" selected hidden>-- Select Place --</option>
                                 <?php
-                                $sqlp = "SELECT * FROM all_places";
+                                $sqlp = "SELECT * FROM all_places ORDER BY placeNameEn ASC";
                                 $resultp = mysqli_query($db, $sqlp);
                                 $countp = mysqli_num_rows($resultp);
                                 if ($countp > 0) {
@@ -161,13 +161,13 @@
             '                            <option value="" selected hidden>-- Select Place --</option>' +
             '<?php
                 require ('configs/database-connection.php');
-                $sqlp = "SELECT * FROM all_places";
+                $sqlp = "SELECT * FROM all_places ORDER BY placeNameEn ASC";
                 $resultp = mysqli_query($db, $sqlp);
                 $countp = mysqli_num_rows($resultp);
                 if ($countp > 0) {
                     while ($rowp = mysqli_fetch_array($resultp, MYSQLI_ASSOC)) {
                 ?>' +
-            '<option value="<?php echo $rowp['place_id']; ?>"><?php echo $rowp['placeNameEn']; ?> (<?php echo $rowp['placeNameBn']; ?>)</option>' +
+            '<option value="<?php echo $rowp['place_id']; ?>"><?php echo $rowp['placeNameEn']; ?> <?php if(!empty($rowp['placeNameBn'])){ echo "({$rowp['paceNameBn']})";} ?></option>' +
             '<?php
                }
             ?>' +

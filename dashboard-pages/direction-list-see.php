@@ -125,7 +125,9 @@
                         {
                             ?>
                             <a style="font-size: 26px;font-weight: bold;"><?php echo get_route_name($rowd['directionRoute']) ?></a>
+                            <!--
                             <a style="font-family: BanglaFont;font-size: 18px;"><?php echo banglaNumber(get_route_name($rowd['directionRoute'])); ?></a>
+                            -->
                             <?php
                         }
                         ?>
@@ -140,7 +142,9 @@
                         <i class="fa fa-long-arrow-right"></i>
                         <?php echo place_name_en($rowp['routeEndPlace']); ?>
                         <br/>
+                        <!--
                         <a class="banglaFont">(<?php echo place_name_bn($rowp['routeStartPlace']); ?> <i class="fa fa-long-arrow-right"></i> <?php echo place_name_bn($rowp['routeEndPlace']); ?>)</a>
+                        -->
                         <br/>
                         <br/>
                         <h4 style="text-decoration: underline;margin-bottom: 5px;">Available Bus List:</h4>
@@ -169,7 +173,11 @@
                             while ($rowdp = mysqli_fetch_array($resultdp, MYSQLI_ASSOC)) {
                             ?>
                             <tr>
-                                <td><?php echo place_name_en($rowdp["direction_place"]) ?> (<a class="banglaFont"><?php echo place_name_bn($rowdp["direction_place"]) ?></a>)</td>
+                                <td><?php echo place_name_en($rowdp["direction_place"]) ?>
+                                    <!--
+                                    (<a class="banglaFont"><?php echo place_name_bn($rowdp["direction_place"]) ?></a>)
+                                    -->
+                                </td>
                                 <td style="text-align: center;"><?php echo $rowdp["direction_distance"] ?> KM</td>
                             </tr>
                             <?php

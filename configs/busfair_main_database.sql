@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2022 at 11:07 PM
+-- Generation Time: Nov 10, 2022 at 09:17 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -375,7 +375,16 @@ INSERT INTO `all_directions` (`direction_id`, `direction_route`, `direction_plac
 (151, '1', '8', 102),
 (152, '1', '19', 104),
 (153, '1', '20', 105),
-(154, '1', '21', 106);
+(154, '1', '21', 106),
+(155, '1', '12', 0),
+(156, '1', '183', 0),
+(157, '1', '64', 0),
+(158, '19', '183', 0),
+(159, '19', '64', 0),
+(160, '19', '146', 0),
+(161, '19', '62', 0),
+(162, '19', '22', 0),
+(163, '19', '79', 0);
 
 -- --------------------------------------------------------
 
@@ -724,7 +733,9 @@ INSERT INTO `all_routes` (`route_id`, `route_no`, `routeStartPlace`, `routeEndPl
 (14, 'R-111', '1', '75', '100'),
 (15, 'R-222', '1', '4', '99'),
 (16, 'R-333', '1', '8', '98'),
-(17, 'R-444', '1', '9', '96');
+(17, 'R-444', '1', '9', '96'),
+(18, '', '1', '6', ''),
+(19, '', '183', '59', '');
 
 -- --------------------------------------------------------
 
@@ -753,7 +764,13 @@ INSERT INTO `all_routes_bus_list` (`id`, `route_id`, `bus_no`) VALUES
 (8, 'R-444', '3'),
 (9, '17', '3'),
 (10, '1', '1'),
-(11, '1', '2');
+(11, '1', '2'),
+(12, '18', '1'),
+(13, '18', '18'),
+(14, '19', '15'),
+(15, '19', '17'),
+(16, '19', '11'),
+(17, '19', '36');
 
 -- --------------------------------------------------------
 
@@ -824,7 +841,7 @@ CREATE TABLE `site_settings` (
 INSERT INTO `site_settings` (`id`, `settingsType`, `settingsTitle`, `settingsValue`) VALUES
 (1, 'site', 'siteName', 'BusFare'),
 (2, 'api', 'apiStatus', 'Active'),
-(3, 'api', 'apiVersion', '1.1.1'),
+(3, 'api', 'apiVersion', '1.1.4'),
 (4, 'api', 'fairRate', '2.45'),
 (5, 'api', 'minimumFare', '10'),
 (6, 'api', 'lastInfoUpdate', '01-09-2022');
@@ -853,9 +870,9 @@ CREATE TABLE `user_admin` (
 --
 
 INSERT INTO `user_admin` (`id`, `user_id`, `role`, `username`, `password`, `full_name`, `activation_status`, `last_ip`, `last_location`, `last_login`) VALUES
-(1, '111', 'admin', 'himu', '419715', 'Sharier Himu', 'active', '', '', '07-11-2022; 1:22:42 AM'),
+(1, '111', 'admin', 'himu', '419715', 'Sharier Himu', 'active', '', '', '10-11-2022; 1:37:06 PM'),
 (2, '0001', 'admin', 'piyal', '4301', 'Piyal Ahmed', 'active', '43.250.83.89', 'Dhaka', '23-10-2022; 12:47:13 PM'),
-(3, '0002', 'admin', 'sajal', '089747', 'Sajal Halder', 'active', '103.169.160.66', 'Dhaka', '23-10-2022; 1:27:57 AM');
+(3, '0002', 'admin', 'sajal', '3051', 'Sajal Halder', 'active', '103.169.160.66', 'Dhaka', '23-10-2022; 1:27:57 AM');
 
 --
 -- Indexes for dumped tables
@@ -917,31 +934,31 @@ ALTER TABLE `user_admin`
 -- AUTO_INCREMENT for table `all_buses`
 --
 ALTER TABLE `all_buses`
-  MODIFY `bus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
+  MODIFY `bus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
 
 --
 -- AUTO_INCREMENT for table `all_directions`
 --
 ALTER TABLE `all_directions`
-  MODIFY `direction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=155;
+  MODIFY `direction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
 
 --
 -- AUTO_INCREMENT for table `all_places`
 --
 ALTER TABLE `all_places`
-  MODIFY `place_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=296;
+  MODIFY `place_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=299;
 
 --
 -- AUTO_INCREMENT for table `all_routes`
 --
 ALTER TABLE `all_routes`
-  MODIFY `route_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `route_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `all_routes_bus_list`
 --
 ALTER TABLE `all_routes_bus_list`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `api_requests`

@@ -127,10 +127,14 @@ if (mysqli_num_rows($result) > 0) {
                                 <td>
                                     <label>Place Name:</label>
                                     <select name="placeName<?php echo $i; ?>" id="placeName<?php echo $i; ?>">
-                                        <option value="<?php echo $rowrdl["direction_place"] ?>" selected hidden><?php echo place_name_en($rowrdl["direction_place"]) ?> (<?php echo place_name_bn($rowrdl["direction_place"]) ?>)</option>
+                                        <option value="<?php echo $rowrdl["direction_place"] ?>" selected hidden><?php echo place_name_en($rowrdl["direction_place"]) ?>
+                                            <!--
+                                            (<?php echo place_name_bn($rowrdl["direction_place"]) ?>)
+                                            -->
+                                        </option>
                                         <?php
                                         require ('configs/database-connection.php');
-                                        $sqlp = "SELECT * FROM all_places";
+                                        $sqlp = "SELECT * FROM all_places ORDER BY placeNameEn ASC";
                                         $resultp = mysqli_query($db, $sqlp);
                                         $countp = mysqli_num_rows($resultp);
                                         if ($countp > 0) {
@@ -280,7 +284,7 @@ if (mysqli_num_rows($result) > 0) {
             '                            <option value="" selected hidden>-- Select Place --</option>' +
             '<?php
                 require ('configs/database-connection.php');
-                $sqlp = "SELECT * FROM all_places";
+                $sqlp = "SELECT * FROM all_places ORDER BY placeNameEn ASC";
                 $resultp = mysqli_query($db, $sqlp);
                 $countp = mysqli_num_rows($resultp);
                 if ($countp > 0) {

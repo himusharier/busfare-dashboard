@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $n = clean_inputs($_POST['box_count']);
     for ($i = 1; $i <= $n; $i++) {
-        if (!empty($_POST['busNameEn'.$i]) && !empty($_POST['busNameBn'.$i])) {
+        if (!empty($_POST['busNameEn'.$i])) {
 
             $busNameEn = clean_inputs($_POST['busNameEn'.$i]);
             $busNameBn = clean_inputs($_POST['busNameBn'.$i]);

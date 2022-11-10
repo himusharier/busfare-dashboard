@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $n = clean_inputs($_POST['box_count']);
     for ($i = 1; $i <= $n; $i++) {
-        if (!empty($_POST['routeNo']) && !empty($_POST['placeDistance'.$i]) && !empty($_POST['placeDistance'.$i])) {
+        if (!empty($_POST['routeNo']) && !empty($_POST['placeName'.$i])) {
 
             $routeNo = clean_inputs($_POST['routeNo']);
             $placeName = clean_inputs($_POST['placeName'.$i]);

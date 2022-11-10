@@ -116,7 +116,10 @@
                         <?php if(!empty($rowp['route_no']))
                         {
                         ?>
-                            <a style="font-size: 22px;font-weight: bold;"><?php echo $rowp['route_no']; ?></a> <a style="font-family: BanglaFont;">(<?php echo banglaNumber($rowp['route_no']); ?>)</a>
+                            <a style="font-size: 22px;font-weight: bold;"><?php echo $rowp['route_no']; ?></a>
+                            <!--
+                            <a style="font-family: BanglaFont;">(<?php echo banglaNumber($rowp['route_no']); ?>)</a>
+                            -->
                         <?php
                         }
                         ?>
@@ -125,7 +128,9 @@
                         <i class="fa fa-long-arrow-right"></i>
                         <?php echo place_name_en($rowp['routeEndPlace']); ?>
                         <br/>
+                        <!--
                         <a class="banglaFont">(<?php echo place_name_bn($rowp['routeStartPlace']); ?> <i class="fa fa-long-arrow-right"></i> <?php echo place_name_bn($rowp['routeEndPlace']); ?>)</a>
+                        -->
                         <?php
                         if (!empty($rowp['routeDistance'])) {
                             echo "<br/><br/><a>Total Distance: <i><b>{$rowp['routeDistance']}</b> KM</i></a>";

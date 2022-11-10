@@ -40,7 +40,7 @@
                             <select name="routeStartPlace" id="routeStartPlace">
                                 <option value="" selected hidden>-- Select Place --</option>
                                 <?php
-                                $sqlp = "SELECT * FROM all_places";
+                                $sqlp = "SELECT * FROM all_places ORDER BY placeNameEn ASC";
                                 $resultp = mysqli_query($db, $sqlp);
                                 $countp = mysqli_num_rows($resultp);
                                 if ($countp > 0) {
@@ -62,7 +62,7 @@
                             <select name="routeEndPlace" id="routeEndPlace">
                                 <option value="" selected hidden>-- Select Place --</option>
                                 <?php
-                                $sqlp = "SELECT * FROM all_places";
+                                $sqlp = "SELECT * FROM all_places ORDER BY placeNameEn ASC";
                                 $resultp = mysqli_query($db, $sqlp);
                                 $countp = mysqli_num_rows($resultp);
                                 if ($countp > 0) {
@@ -90,7 +90,7 @@
                             <select name="busName1" id="busName1">
                                 <option value="" selected hidden>-- Select Bus --</option>
                                 <?php
-                                $sqlb = "SELECT * FROM all_buses";
+                                $sqlb = "SELECT * FROM all_buses ORDER BY busNameEn ASC";
                                 $resultb = mysqli_query($db, $sqlb);
                                 $countb = mysqli_num_rows($resultb);
                                 if ($countb > 0) {
@@ -189,7 +189,7 @@
             '                            <option value="" selected hidden>-- Select Bus --</option>' +
             '<?php
                 require ('configs/database-connection.php');
-                $sqlb = "SELECT * FROM all_buses";
+                $sqlb = "SELECT * FROM all_buses ORDER BY busNameEn ASC";
                 $resultb = mysqli_query($db, $sqlb);
                 $countb = mysqli_num_rows($resultb);
                 if ($countb > 0) {
