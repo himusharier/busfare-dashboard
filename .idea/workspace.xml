@@ -20,15 +20,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f430b777-5c4b-48f5-b14b-2eaf0b9fc331" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../bimtransfer-project/includes/PHPMailer.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bimtransfer-project/includes/PHPMailer/Exception.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bimtransfer-project/includes/PHPMailer/OAuth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bimtransfer-project/includes/PHPMailer/PHPMailer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bimtransfer-project/includes/PHPMailer/POP3.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bimtransfer-project/includes/PHPMailer/SMTP.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bimtransfer-project/receipt_photos/user_24/636ce5f7b990a166808114374867.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bimtransfer-project/receipt_photos/user_24/636d15b18494e166809336134418.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/admin/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/admin/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/admin/exchanges.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/admin/exchanges.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/admin/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/admin/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/admin/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/admin/settings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/admin/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/admin/users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/includes/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/includes/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/languages/Bangla.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/languages/Bangla.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/languages/English.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/languages/English.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/requests/bit_register.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/requests/bit_register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/sources/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/sources/account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/sources/account/exchange.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/sources/account/exchange.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/sources/account/verification.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/sources/account/verification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/sources/exchange.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/sources/exchange.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/sources/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/sources/register.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bkend-calls/buses-form-data-insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/bkend-calls/buses-form-data-insert.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bkend-calls/directions-form-data-insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/bkend-calls/directions-form-data-insert.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-pages/direction-list-add.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-pages/direction-list-add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-pages/direction-list-see.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-pages/direction-list-see.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-pages/direction-list-update.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-pages/direction-list-update.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-pages/route-list-add.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-pages/route-list-add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-pages/route-list-see.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-pages/route-list-see.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-pages/route-list-update.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-pages/route-list-update.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +54,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../bimtransfer-project" />
   </component>
   <component name="ProjectId" id="2H8qrs0E7itsrozSut2LMoicIHx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -74,7 +89,8 @@
       <workItem from="1667908400092" duration="23390000" />
       <workItem from="1668003334956" duration="1525000" />
       <workItem from="1668024861754" duration="4910000" />
-      <workItem from="1668065221464" duration="2269000" />
+      <workItem from="1668065221464" duration="2887000" />
+      <workItem from="1668077321037" duration="30226000" />
     </task>
     <servers />
   </component>
