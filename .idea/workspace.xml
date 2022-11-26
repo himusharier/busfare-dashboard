@@ -20,29 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f430b777-5c4b-48f5-b14b-2eaf0b9fc331" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../bimtransfer-project/includes/PHPMailer.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bimtransfer-project/includes/PHPMailer/Exception.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bimtransfer-project/includes/PHPMailer/OAuth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bimtransfer-project/includes/PHPMailer/PHPMailer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bimtransfer-project/includes/PHPMailer/POP3.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bimtransfer-project/includes/PHPMailer/SMTP.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bimtransfer-project/receipt_photos/user_24/636ce5f7b990a166808114374867.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bimtransfer-project/receipt_photos/user_24/636d15b18494e166809336134418.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/admin/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/admin/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/admin/exchanges.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/admin/exchanges.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/admin/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/admin/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/admin/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/admin/settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/admin/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/admin/users.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/admin/sources/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/includes/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/includes/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/languages/Bangla.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/languages/Bangla.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/languages/English.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/languages/English.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/requests/bit_register.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/requests/bit_register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/sources/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/sources/account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/sources/account/exchange.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/sources/account/exchange.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/sources/account/verification.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/sources/account/verification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/sources/exchange.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/sources/exchange.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bimtransfer-project/sources/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/../bimtransfer-project/sources/register.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +69,8 @@
       <workItem from="1668003334956" duration="1525000" />
       <workItem from="1668024861754" duration="4910000" />
       <workItem from="1668065221464" duration="2887000" />
-      <workItem from="1668077321037" duration="30226000" />
+      <workItem from="1668077321037" duration="31035000" />
+      <workItem from="1668183261902" duration="17571000" />
     </task>
     <servers />
   </component>
@@ -113,10 +93,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1503" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1667830009826">
+    <state x="1503" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1668189707632">
       <screen x="1366" y="0" width="1366" height="738" />
     </state>
-    <state x="1503" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738/1366.0.1366.738@1366.0.1366.738" timestamp="1667830009826" />
+    <state x="1503" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738/1366.0.1366.738@1366.0.1366.738" timestamp="1668189707632" />
     <state x="1550" y="14" key="SettingsEditor" timestamp="1667677796991">
       <screen x="1366" y="0" width="1366" height="738" />
     </state>
@@ -127,7 +107,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../bimtransfer-project/admin/sources/admin/dashboard.php</url>
-          <line>304</line>
+          <line>306</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
