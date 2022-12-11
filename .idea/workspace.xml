@@ -20,19 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f430b777-5c4b-48f5-b14b-2eaf0b9fc331" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../buradio.portal/assets/images/banner.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../buradio.portal/ajax-calls/user-login-checkUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/../buradio.portal/ajax-calls/user-login-checkUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../buradio.portal/assets/css/portal-access-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../buradio.portal/assets/css/portal-access-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../buradio.portal/assets/css/portal-dashboard-style - Copy.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../buradio.portal/assets/images/banner1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../buradio.portal/assets/images/banner2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../buradio.portal/assets/images/banner3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../buradio.portal/configs/canonical-link.php" beforeDir="false" afterPath="$PROJECT_DIR$/../buradio.portal/configs/canonical-link.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../buradio.portal/portal-access.php" beforeDir="false" afterPath="$PROJECT_DIR$/../buradio.portal/portal-access.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../buradio.portal/portal-dashbaord.php" beforeDir="false" afterPath="$PROJECT_DIR$/../buradio.portal/portal-dashbaord.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/busfair-dashboard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/busfair-dashboard.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,6 +70,12 @@
       <workItem from="1668077321037" duration="31035000" />
       <workItem from="1668183261902" duration="17571000" />
       <workItem from="1669549563126" duration="9369000" />
+      <workItem from="1669645039912" duration="15956000" />
+      <workItem from="1669706711128" duration="8221000" />
+      <workItem from="1670004625125" duration="5703000" />
+      <workItem from="1670059793291" duration="5146000" />
+      <workItem from="1670596331441" duration="589000" />
+      <workItem from="1670683257076" duration="13699000" />
     </task>
     <servers />
   </component>
@@ -109,6 +102,11 @@
       <screen x="1366" y="0" width="1366" height="738" />
     </state>
     <state x="1503" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738/1366.0.1366.738@1366.0.1366.738" timestamp="1668189707632" />
+    <state x="518" y="292" key="NewPhpFileDialog" timestamp="1670692638986">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="-848" y="292" key="NewPhpFileDialog/0.0.1366.738/-1366.0.1366.738@-1366.0.1366.738" timestamp="1669665792396" />
+    <state x="518" y="292" key="NewPhpFileDialog/0.0.1366.738/-1366.0.1366.738@0.0.1366.738" timestamp="1670692638986" />
     <state x="1550" y="14" key="SettingsEditor" timestamp="1667677796991">
       <screen x="1366" y="0" width="1366" height="738" />
     </state>
