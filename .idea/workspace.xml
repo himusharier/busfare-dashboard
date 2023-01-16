@@ -19,13 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f430b777-5c4b-48f5-b14b-2eaf0b9fc331" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../buradio.portal/assets/css/portal-dashboard-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../buradio.portal/assets/css/portal-dashboard-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../buradio.portal/assets/js/portal-dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../buradio.portal/assets/js/portal-dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../buradio.portal/dashboard-pages/account-user.php" beforeDir="false" afterPath="$PROJECT_DIR$/../buradio.portal/dashboard-pages/account-user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../buradio.portal/dashboard-pages/settings-user.php" beforeDir="false" afterPath="$PROJECT_DIR$/../buradio.portal/dashboard-pages/settings-user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f430b777-5c4b-48f5-b14b-2eaf0b9fc331" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,7 +36,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../buradio.portal" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="ProjectId" id="2H8qrs0E7itsrozSut2LMoicIHx" />
@@ -107,6 +101,7 @@
       <workItem from="1672512532035" duration="2819000" />
       <workItem from="1672559509412" duration="593000" />
       <workItem from="1672639249097" duration="8606000" />
+      <workItem from="1672945658188" duration="59000" />
     </task>
     <servers />
   </component>
